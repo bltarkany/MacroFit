@@ -1,7 +1,4 @@
-DROP DATABASE IF EXISTS Project2;
-
-CREATE DATABASE Project2;
-USE Project2;
+USE rbyjr5ekm7k1f3kc;
 
 -- Table containing the trainee's personal information. 1 record per trainee
 CREATE TABLE Trainee_Info (
