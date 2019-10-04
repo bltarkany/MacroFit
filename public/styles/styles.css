@@ -1,3 +1,65 @@
-.list-group-item {
-  line-height: 2.5;
+/* COLOR REF
+BG0: #272727
+ST0: #747474
+MT1: #FF652F
+MT2: #FFE400
+MT3: #14A76C
+
+SNT: #343434
+SNC: #171717
+ */
+
+html{
+  overflow-x: hidden;
+}
+
+.overlay {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0px;
+  left: 0px;
+  background-image: url("../images/bg1.jpg");
+  background-size: cover;
+  background-position: right bottom;
+  opacity: .05;
+}
+
+.gridContainer {
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  min-height: 100vh;
+  background: #272727;
+  color: #FF652F;
+}
+
+.topPage{
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sideNav{
+  z-index: 2;
+  position: absolute;
+  background: #171717;
+  height: 100%;
+  width: auto;
+}
+
+.navTitle{
+  text-align: center;
+  padding: .2rem;
+  background: #343434;
+  font-size: 2rem;
+}
+
+.navLinks{
+  
 }
