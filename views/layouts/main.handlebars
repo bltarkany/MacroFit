@@ -4,21 +4,58 @@
 <head>
   <meta charset="utf-8">
 
-  {{!-- Bootstrap --}}
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  {{!-- Fonts --}}
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Vast+Shadow&display=swap" rel="stylesheet">
 
   {{!-- CSS --}}
+  <link rel="stylesheet" href="/styles/reset.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
 
-  {{!-- JS --}}
-  <script src=""></script>
+  {{!-- jQuery --}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   {{!-- Title --}}
   <title>Home Page</title>
 </head>
 
 <body>
-  {{{body}}}
+  {{!-- BG Overlay --}}
+  <div class="overlay"></div>
+
+  <div class="mainGrid">
+    {{!-- Side Bar Nav --}}
+    <div class="sideNav">
+
+      {{!-- Nav Title --}}
+      <div class="navTitle">Project Fitness</div>
+
+      {{!-- navLink --}}
+      <div class="navLinks">
+
+        {{!-- Calendar --}}
+        <a href="/calendar" class="nav" id="calendar"><span id="date">Today</span></a>
+
+        {{!-- My Account --}}
+        <a href="/profile" class="nav" id="account">My Profile</a>
+
+        {{!-- Nutrition --}}
+        <a href="/nutrition" class="nav" id="nutrition">Nutrition</a>
+
+        {{!-- Workout --}}
+        <a href="/workout" class="nav" id="workout">Workout</a>
+
+      </div>
+    </div>
+
+    {{!-- Grid Container START --}}
+    <div class="gridContainer contentRight">
+      {{{body}}}
+    </div>
+    {{!-- Grid Container END --}}
+  </div>
+
+  {{!-- Website f(x) JS --}}
+  <script src="js/app.js"></script>
 </body>
 
 </html>
