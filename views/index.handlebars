@@ -1,40 +1,21 @@
-{{!-- BG Overlay --}}
-<div class="overlay"></div>
-
-{{!-- Grid Container START --}}
-<div class="gridContainer">
-  <h1>Project 2</h1>
-
-  {{!-- Side Bar Nav --}}
-  <div class="sideNav">
-
-    {{!-- Nav Title --}}
-    <div class="navTitle">Quick Nav</div>
-
-    {{!-- navLink --}}
-    <div class="navLinks">
-
-        {{!-- My Account --}}
-        <div class="nav" id="account">My Account</div>
-
-        {{!-- Calendar --}}
-        <div class="nav" id="calendar">Calendar</div>
-
-        {{!-- Nutrition --}}
-        <div class="nav" id="nutrition">Nutrition</div>
-        
-        {{!-- Workout --}}
-        <div class="nav" id="workout">Workout</div>
-
-    </div>
+<div class="box pos0">
+  <div class="boxHeader">Calorie Count
   </div>
 
-
+  <div id="calories" class="boxTop">
+      <canvas id="counter"></canvas>
+    <div id="current">800</div>
+    <div id="max">2000</div>
+  </div>
 
 </div>
-{{!-- Grid Container END --}}
 
+<div class="box pos1">
+  <div class="boxHeader">Today's Workout
+  </div>
+</div>
 
-{{!-- 
-<script src="/js/index.js"></script>
-<script src="/js/app.js"></script> --}}
+<div class="box pos2">
+  <div class="boxHeader">Other Thingy
+  </div>
+</div>

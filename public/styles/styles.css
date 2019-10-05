@@ -1,16 +1,26 @@
 /* COLOR REF
-BG0: #272727
-ST0: #747474
-MT1: #FF652F
-MT2: #FFE400
-MT3: #14A76C
+Lighest: #f7f9fb
+Lighter: #8fc1e3
+Light: #5085a5
+Dark: #31708e
+Darker: #687864
 
-SNT: #343434
-SNC: #171717
+font-family: 'Vast Shadow', cursive;
+font-family: 'Montserrat', sans-serif;
  */
 
-html{
-  overflow-x: hidden;
+p {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: black 0 0 .1rem;
+  overflow-y: hidden;
 }
 
 .overlay {
@@ -24,42 +34,130 @@ html{
   background-image: url("../images/bg1.jpg");
   background-size: cover;
   background-position: right bottom;
-  opacity: .05;
+  opacity: .07;
 }
 
-.gridContainer {
-  z-index: 0;
+/* FULL PAGE GRID */
+.mainGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-columns: 10rem auto;
   min-height: 100vh;
-  background: #272727;
-  color: #FF652F;
 }
 
-.topPage{
+/* CONTENT GRID */
+.contentRight {
+  grid-column: 2;
+}
+
+.topPage {
   z-index: 1;
   grid-column: 1;
   grid-row: 1;
 }
 
-.sideNav{
-  z-index: 2;
-  position: absolute;
-  background: #171717;
+/* SIDE NAV BAR */
+.sideNav {
+  grid-column: 1;
+  z-index: 3;
+  background: #8fc1e3;
+  color: #f7f9fb;
   height: 100%;
-  width: auto;
 }
 
-.navTitle{
+.navTitle {
   text-align: center;
-  padding: .2rem;
-  background: #343434;
+  padding: .5rem;
+  background: #f7f9fb;
+  color: #5085a5;
+  text-shadow: none;
   font-size: 2rem;
+  height: 4rem;
 }
 
-.navLinks{
-  
+.navLinks {
+  width: 100%;
 }
+
+.nav {
+  padding: 1rem;
+  background: #5085a5;
+  margin-top: .2rem;
+  cursor: pointer;
+}
+
+.nav:hover {
+  background: #457595;
+}
+
+
+/* ------------------INDEX PAGE START------------------*/
+.gridContainer {
+  z-index: 0;
+  display: grid;
+  width: 100%;
+  justify-content: stretch;
+  grid-template-columns: 33% 33% auto;
+  grid-template-rows: 5rem 50vh auto;
+  grid-row-gap: 0px;
+  background: #f7f9fb;
+  color: #5085a5;
+}
+
+#calories{
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+canvas{
+  display: block;
+  width: 100%;
+}
+
+/* Content Box */
+.box {
+  z-index: 1;
+  background: #f7f9fb;
+  grid-row: span 3;
+  width: 100%;
+  border: .25rem #8fc1e3 solid;
+  border-top: none;
+  border-bottom: none;
+}
+
+.boxHeader {
+  display: flex;
+  text-align: center;
+  font-size: 150%;
+  color: #f7f9fb;
+  background: #5085a5;
+  width: 100%;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxTop {
+  text-align: center;
+  height: 80%;
+  width: 100%;
+}
+
+#max{
+  display: none;
+}
+
+.pos0 {
+  grid-column: 1;
+  border-left: none;
+}
+
+.pos1 {
+  grid-column: 2;
+}
+
+.pos2 {
+  grid-column: 3;
+  border-right: none;
+}
+/* ------------------INDEX PAGE END------------------*/
