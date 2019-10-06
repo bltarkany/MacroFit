@@ -1,4 +1,4 @@
-<form action="/app.js">
+<form action="/app.js" id="client">
         <div class="row">
             <div class="col-2">
                 <label for="first-name">First Name</label>
@@ -16,7 +16,7 @@
             </div>
             <div class="col-2">
                 <label for="phone">Enter your phone number:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="(123) 456-7890" required>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
             </div>
         </div>
         <div class="row">
@@ -116,5 +116,5 @@
                 </select>
             </div>
         </div>
-
+        <input type="submit" value="submit" id="sub-btn">
     </form>
