@@ -1,10 +1,9 @@
 var db = require("../models");
 
 module.exports = function(app) {
-
   // Intro Form
   app.get("/", function(req, res) {
-    res.render("form",{layout:false});
+    res.render("form", { layout: false });
   });
 
   // Load dashboard page

@@ -1,3 +1,4 @@
+console.log("apiroutes loaded");
 var db = require("../models");
 var signUp = {
   userID: ""
@@ -9,6 +10,7 @@ module.exports = function(app) {
   app.get("/api/addTrainee", function(req, res) {
     console.log(db.trainee_login);
     db.trainee_login.findAll({}).then(function(dbLoginInfo) {
+      console.log(dbLoginInfo);
       res.json(dbLoginInfo);
     });
   });
