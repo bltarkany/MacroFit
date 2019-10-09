@@ -7,8 +7,8 @@ module.exports = function(sequelize, DataTypes) {
     LastName: {
       type: DataTypes.STRING
     },
-    DOB: {
-      type: DataTypes.DATEONLY
+    Age: {
+      type: DataTypes.INTEGER
     },
     Gender: {
       type: DataTypes.STRING,
@@ -17,11 +17,17 @@ module.exports = function(sequelize, DataTypes) {
     Weight: {
       type: DataTypes.INTEGER
     },
-    Height: {
-      type: DataTypes.STRING
+    Height_FT: {
+      type: DataTypes.INTEGER
+    },
+    Height_IN: {
+      type: DataTypes.INTEGER
     },
     Activity_Level: {
       type: DataTypes.STRING
+    },
+    Deficit: {
+      type: DataTypes.INTEGER
     },
     Email: {
       type: DataTypes.STRING,
@@ -43,7 +49,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true
     },
-    zip: {
+    zip5: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
