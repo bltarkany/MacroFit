@@ -208,7 +208,7 @@ $(document).ready(function () {
     };
     // ----------------------------------------------------------------
     // client object for database
-    var client = {
+    var trainee = {
       first: newClient.first,
       last: newClient.last,
       email: newClient.email,
@@ -223,13 +223,19 @@ $(document).ready(function () {
     };
 
     console.log(macro);
-    console.log(client);
+    console.log(trainee);
 
-
-    $.post("/api/traineeSignUp", newClient, function (req, res) {
-      res.json(client, macro);
-      
-    }).then(function() {
+    $.ajax({
+      method: "POST",
+      url: "/api/traineeSignUp",
+      data: "newClient",
+      dataType: "json",
+      success: function(){
+        console.log("post hit");
+      }
+    }).then(function(data){
+      console.log(".then hit");
+      console.log(data);
       // clear values from form
       $("#first").val("");
       $("#email").val("");
@@ -243,5 +249,27 @@ $(document).ready(function () {
       
       location.redirect("/dashboard");
     });
+
+    // $.post("/api/traineeSignUp", trainee, macro, function (req, res) {
+    //   console.log(trainee, macro);
+    //   console.log(".post hit");
+    //   res.json(trainee, macro);
+      
+    // }).then(function(data) {
+    //   console.log(".then hit");
+    //   console.log(data);
+    //   // clear values from form
+    //   $("#first").val("");
+    //   $("#email").val("");
+    //   $("#dob").val("");
+    //   $("#gender").val("");
+    //   $("#feet").val("");
+    //   $("#inches").val("");
+    //   $("#weight").val("");
+    //   $("#saf").val("");
+    //   $("#deficit").val("");
+      
+    //   location.redirect("/dashboard");
+    // });
   });
 });
