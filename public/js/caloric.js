@@ -9,6 +9,7 @@ $(document).ready(function () {
     // new client object 
     var newClient = {
       first: $("#first").val().trim(),
+      last: $("#last").val().trim(),
       email: $("#email").val().trim(),
       dob: $("#dob").val().trim(),
       gender: $("#gender").val(),
@@ -36,7 +37,7 @@ $(document).ready(function () {
     );
     // ----------------------------------------------------------------------
     // saf configurations--
-    var age = newClient.dob;
+    var age = getAge(newClient.dob);
     var weight = convertKg(newClient.weight);
     var height = convertHeight(newClient.feet, newClient.inches);
     // rmr calculations
@@ -205,10 +206,31 @@ $(document).ready(function () {
       ccarb: carbs,
       cfat: fats
     };
+    // ----------------------------------------------------------------
+    // client object for database
+    var client = {
+      first: newClient.first,
+      last: newClient.last,
+      email: newClient.email,
+      dob: newClient.dob,
+      age: age,
+      gender:newClient.gender,
+      feet: newClient.feet,
+      inches: newClient.inches,
+      weight: newClient.weight,
+      saf: newClient.saf,
+      def: newClient.deficit
+    };
 
     console.log(macro);
+    console.log(client);
 
-    $.post("/api/addTrainee", newClient, function () {
+
+    $.post("/api/traineeSignUp", newClient, function (req, res) {
+      res.json(client, macro);
+      
+    }).then(function() {
+      // clear values from form
       $("#first").val("");
       $("#email").val("");
       $("#dob").val("");
@@ -218,6 +240,8 @@ $(document).ready(function () {
       $("#weight").val("");
       $("#saf").val("");
       $("#deficit").val("");
+      
+      location.redirect("/dashboard");
     });
   });
 });
