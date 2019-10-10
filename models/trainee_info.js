@@ -1,6 +1,11 @@
 /* eslint-disable camelcase */
 module.exports = function (sequelize, DataTypes) {
   var trainee_info = sequelize.define("trainee_info", {
+    id: {
+      type: DataTypes.INTEGER,
+      min: 10000,
+      primaryKey: true
+    },
     FirstName: {
       type: DataTypes.STRING
     },
