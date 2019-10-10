@@ -8,7 +8,11 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));
+app.use(
+  express.urlencoded({
+    extended: false
+  })
+);
 app.use(express.json());
 app.use(express.static("public"));
 
@@ -22,10 +26,12 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
+require("./routes/loginAPI")(app);
 require("./routes/htmlRoutes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = {
+  force: false
+};
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
