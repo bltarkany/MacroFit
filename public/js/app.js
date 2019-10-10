@@ -54,4 +54,13 @@ $(document).ready(function () {
     ///////////// Calorie Counter /////////////
 
 
+    ///////////// LOGIN PAGE /////////////
+    $("#openOld").click( function(){
+        $("#newBox").removeClass("hidden");
+        $("#oldBox").addClass("hidden");
+        console.log("Box toggled");
+    });
+
+    ///////////// LOGIN PAGE /////////////  
+
 });
