@@ -48,6 +48,7 @@ $(document).ready(function () {
         rmr = womensRMR(weight, height, age);
       }
     };
+
       // cb
     rmr(weight, height, age);
 
@@ -69,6 +70,7 @@ $(document).ready(function () {
     }
 
     // function to convert Date of Birth to age
+
     // eslint-disable-next-line no-unused-vars
     function getAge(dob) {
       var today = new Date();
@@ -108,6 +110,7 @@ $(document).ready(function () {
       console.log(cal);
       return parseFloat(cal.toFixed());
     }
+
 
     // --------------------------------------------------------------------
     // deficit configurations
@@ -190,6 +193,8 @@ $(document).ready(function () {
         fats = Math.abs((newdef * .33) / 9);
       }
     };
+
+
       // cb
     fats(deficit, newdef);
     console.log(mac, protein, carbs, fats);
@@ -246,6 +251,11 @@ $(document).ready(function () {
       $("#weight").val("");
       $("#saf").val("");
       $("#deficit").val("");
+    });
+
+    window.location.href="/dashboard/";
+    return false;
+
       
       location.redirect("/dashboard");
     });
