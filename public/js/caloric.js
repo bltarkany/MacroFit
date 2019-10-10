@@ -3,6 +3,23 @@
 
 $(document).ready(function () {
   console.log("loaded");
+
+  ///////////// LOGIN PAGE /////////////
+  $(".openOld").click(function () {
+    $("#oldBox").removeClass("hidden");
+    $("#newBox").addClass("hidden");
+    console.log("Box toggled");
+  });
+
+  $("#openNew").click(function () {
+    $("#newBox").removeClass("hidden");
+    $("#oldBox").addClass("hidden");
+    console.log("Box toggled");
+  });
+
+  ///////////// LOGIN PAGE /////////////  
+
+
   // Caloric and Macro info - bt
   $("#sub-btn").on("click", function (e) {
     e.preventDefault();
@@ -49,7 +66,7 @@ $(document).ready(function () {
       }
     };
 
-      // cb
+    // cb
     rmr(weight, height, age);
 
     console.log(age, weight, height, rmr);
@@ -127,7 +144,7 @@ $(document).ready(function () {
         newdef = calDef(tdee, deficit);
       }
     };
-      // deficit calculations cb
+    // deficit calculations cb
     newdef(tdee, deficit);
     console.log(newdef);
     // caloric deficit
@@ -141,6 +158,7 @@ $(document).ready(function () {
     // configure macro breakdown
     // cb
     macConfig(deficit);
+
     function macConfig(deficit) {
       if (deficit === 250) {
         mac = "35/35/30";
@@ -153,7 +171,7 @@ $(document).ready(function () {
       }
     }
     // proteins calories broken down into grams
-    var protein = function(deficit, newdef) {
+    var protein = function (deficit, newdef) {
       if (deficit === 250) {
         protein = Math.abs((newdef * .35) / 4);
       } else if (deficit === 500) {
@@ -164,10 +182,10 @@ $(document).ready(function () {
         protein = Math.abs((newdef * .33) / 4);
       }
     };
-      // cb
+    // cb
     protein(deficit, newdef);
     // carbs calories broken down into grams
-    var carbs = function(deficit, newdef) {
+    var carbs = function (deficit, newdef) {
       if (deficit === 250) {
         carbs = Math.abs((newdef * .35) / 4);
       } else if (deficit === 500) {
@@ -178,7 +196,7 @@ $(document).ready(function () {
         carbs = Math.abs((newdef * .33) / 4);
       }
     };
-      // cb
+    // cb
     carbs(deficit, newdef);
     // fats calories broken down into grams
     var fats = function (deficit, newdef) {
@@ -195,7 +213,7 @@ $(document).ready(function () {
     };
 
 
-      // cb
+    // cb
     fats(deficit, newdef);
     console.log(mac, protein, carbs, fats);
 
@@ -219,7 +237,7 @@ $(document).ready(function () {
       email: newClient.email,
       dob: newClient.dob,
       age: age,
-      gender:newClient.gender,
+      gender: newClient.gender,
       feet: newClient.feet,
       inches: newClient.inches,
       weight: newClient.weight,
@@ -235,10 +253,10 @@ $(document).ready(function () {
       url: "/api/traineeSignUp",
       data: "newClient",
       dataType: "json",
-      success: function(){
+      success: function () {
         console.log("post hit");
       }
-    }).then(function(data){
+    }).then(function (data) {
       console.log(".then hit");
       console.log(data);
       // clear values from form
@@ -253,33 +271,34 @@ $(document).ready(function () {
       $("#deficit").val("");
     });
 
-    window.location.href="/dashboard/";
+    window.location.href = "/dashboard/";
     return false;
 
-      
-      location.redirect("/dashboard");
-    });
 
-    // $.post("/api/traineeSignUp", trainee, macro, function (req, res) {
-    //   console.log(trainee, macro);
-    //   console.log(".post hit");
-    //   res.json(trainee, macro);
-      
-    // }).then(function(data) {
-    //   console.log(".then hit");
-    //   console.log(data);
-    //   // clear values from form
-    //   $("#first").val("");
-    //   $("#email").val("");
-    //   $("#dob").val("");
-    //   $("#gender").val("");
-    //   $("#feet").val("");
-    //   $("#inches").val("");
-    //   $("#weight").val("");
-    //   $("#saf").val("");
-    //   $("#deficit").val("");
-      
-    //   location.redirect("/dashboard");
-    // });
+    location.redirect("/dashboard");
   });
+
+  // $.post("/api/traineeSignUp", trainee, macro, function (req, res) {
+  //   console.log(trainee, macro);
+  //   console.log(".post hit");
+  //   res.json(trainee, macro);
+
+  // }).then(function(data) {
+  //   console.log(".then hit");
+  //   console.log(data);
+  //   // clear values from form
+  //   $("#first").val("");
+  //   $("#email").val("");
+  //   $("#dob").val("");
+  //   $("#gender").val("");
+  //   $("#feet").val("");
+  //   $("#inches").val("");
+  //   $("#weight").val("");
+  //   $("#saf").val("");
+  //   $("#deficit").val("");
+
+  //   location.redirect("/dashboard");
+  // });
+  // });
+  // )}
 });
