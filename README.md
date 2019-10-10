@@ -21,6 +21,7 @@ within the palm of your hand.
     - macro breakdown in to protein, carbs, and fat grams
 
 
+
 **Workout Routine:**
 
 * Workout routines are based on time frame breakdown:
@@ -29,3 +30,6 @@ within the palm of your hand.
     - Muscle groups routine can completed in 6 days or extended to encompass
         3 or 4 muscle groups per week 
 * Each routine will provide info including the exercises, equipment, sets, reps, and type of exercise
+
+
+### Technologies
