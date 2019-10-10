@@ -3,12 +3,10 @@ var signUp = {
   userID: ""
 }; // signUp object will hold the Trainee's ID when it's generated
 
-console.log(db.trainee_info);
-
 //console.log(db);
-module.exports = function(app) {
+module.exports = function (app) {
   // Create a new signUp
-  app.post("/api/traineeSignUp", function(req, res) {
+  app.post("/api/traineeSignUp", function (req, res) {
     var today = new Date();
     // eslint-disable-next-line no-unused-vars
     var date =
@@ -20,8 +18,7 @@ module.exports = function(app) {
     //populates trainee_info with user entered data. insertTraineeInfo also returns the id assigned to the new sign up
     db.sequelize
       .query(
-        "CALL insertTraineeInfo(:param1,:param2,:param3,:param4,:param5,:param6,:param7,:param8,:param9,:param10,:param11,:param12,:param13,:param14,:param15,:param16,:param17,:param18)",
-        {
+        "CALL insertTraineeInfo(:param1,:param2,:param3,:param4,:param5,:param6,:param7,:param8,:param9,:param10,:param11,:param12,:param13,:param14,:param15,:param16,:param17,:param18)", {
           replacements: {
             param1: req.body.firstName,
             param2: req.body.lastName,
@@ -46,7 +43,7 @@ module.exports = function(app) {
           raw: true
         }
       )
-      .then(function(data) {
+      .then(function (data) {
         signUp.userID = Object.values(data[0])[0];
         console.log("Data inserted: " + JSON.stringify(data, null, 2));
         console.log(signUp.userID);
@@ -55,14 +52,14 @@ module.exports = function(app) {
   });
 
   // Delete a trainee's account
-  app.delete("/api/traineeSignUp/:id", function(req, res) {
+  app.delete("/api/traineeSignUp/:id", function (req, res) {
     db.trainee_info
       .destroy({
         where: {
           id: req.params.id
         }
       })
-      .then(function(data) {
+      .then(function (data) {
         res.json(data);
       });
   });

@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var trainee_info = sequelize.define("trainee_info", {
     FirstName: {
       type: DataTypes.STRING
