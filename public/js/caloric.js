@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable prettier/prettier */
 // on load up of page
 
@@ -25,14 +26,15 @@ $(document).ready(function () {
     e.preventDefault();
     // new client object 
     var newClient = {
-      first: $("#first").val().trim(),
-      last: $("#last").val().trim(),
-      email: $("#email").val().trim(),
-      dob: $("#dob").val().trim(),
+      first: $("#first").val(),
+      last: $("#last").val(),
+      uniqueId: $("#uniqueId").val(),
+      password: $("#password").val(),
+      dob: $("#dob").val(),
       gender: $("#gender").val(),
       feet: $("#feet").val(),
       inches: $("#inches").val(),
-      weight: $("#weight").val().trim(),
+      weight: $("#weight").val(),
       saf: $("#saf").val(),
       deficit: $("#deficit").val()
     };
@@ -78,7 +80,7 @@ $(document).ready(function () {
       console.log(rmr);
       return parseFloat(rmr.toFixed(2));
     }
-    // Womens RMR
+    // women's RMR
     function womensRMR(weight, height, age) {
       // eslint-disable-next-line prettier/prettier
       rmr = Math.abs((9.99 * weight) + (6.25 * height) - (4.92 * age) - 161);
@@ -110,13 +112,12 @@ $(document).ready(function () {
       return cm;
     }
 
-    // coverting pounds into kg
+    // converting pounds into kg
     function convertKg(lbs) {
       var kg = Math.abs(parseFloat(lbs) / 2.205);
       // return result
       return parseFloat(kg.toFixed(2));
     }
-
     // -----------------------------------------------------------------
     // tdee configurations
     var tdee = newTdee(rmr, newClient.saf);
@@ -127,8 +128,6 @@ $(document).ready(function () {
       console.log(cal);
       return parseFloat(cal.toFixed());
     }
-
-
     // --------------------------------------------------------------------
     // deficit configurations
     var deficit = parseFloat(newClient.deficit);
@@ -155,10 +154,9 @@ $(document).ready(function () {
     }
     // macro breakdown
     var mac;
-    // configure macro breakdown
     // cb
     macConfig(deficit);
-
+    // configure macro breakdown
     function macConfig(deficit) {
       if (deficit === 250) {
         mac = "35/35/30";
@@ -219,46 +217,49 @@ $(document).ready(function () {
 
     // ---------------------------------------------------------------
     // **caloric and macro object
-    var macro = {
-      crmr: rmr,
-      ctdee: tdee,
-      cdef: deficit,
-      ckcal: newdef,
-      cmac: mac,
-      cpro: protein,
-      ccarb: carbs,
-      cfat: fats
+    var newmealdaily = {
+      calories: newdef,
+      protein: protein,
+      carbs: carbs,
+      fats: fats
     };
     // ----------------------------------------------------------------
-    // client object for database
-    var trainee = {
-      first: newClient.first,
-      last: newClient.last,
-      email: newClient.email,
-      dob: newClient.dob,
+    // client object for database trainee_info and post api
+    var newtraineeinfo = {
+      firstName: newClient.first,
+      lastName: newClient.last,
       age: age,
       gender: newClient.gender,
-      feet: newClient.feet,
-      inches: newClient.inches,
-      weight: newClient.weight,
-      saf: newClient.saf,
-      def: newClient.deficit
+      weight: parseFloat(newClient.weight),
+      height_FT: parseFloat(newClient.feet),
+      height_IN: parseFloat(newClient.inches),      
+      activity_Level: newClient.saf,
+      deficit: parseFloat(newClient.deficit),
+      login: newClient.uniqueId,
+      password: newClient.password
     };
 
-    console.log(macro);
-    console.log(trainee);
+    console.log(newmealdaily);
+    console.log(newtraineeinfo);
 
-    $.ajax({
-      method: "POST",
-      url: "/api/traineeSignUp",
-      data: "newClient",
-      dataType: "json",
-      success: function () {
-        console.log("post hit");
-      }
+    // ================test===============
+    // $.ajax("/api/mealDaily", {
+    //   type: "POST",
+    //   data: newmealdaily
+    // }).then(function() {
+    //   console.log("calorie count loaded.");
+    // });
+    // ===================================
+
+    $.ajax("/api/traineeSignUp", {
+
+      type: "POST",
+      data: newtraineeinfo
+
     }).then(function (data) {
-      console.log(".then hit");
+      console.log("created new trainee");
       console.log(data);
+
       // clear values from form
       $("#first").val("");
       $("#email").val("");
@@ -275,30 +276,7 @@ $(document).ready(function () {
     return false;
 
 
-    location.redirect("/dashboard");
+    // window.location.replace("/dashboard");
   });
 
-  // $.post("/api/traineeSignUp", trainee, macro, function (req, res) {
-  //   console.log(trainee, macro);
-  //   console.log(".post hit");
-  //   res.json(trainee, macro);
-
-  // }).then(function(data) {
-  //   console.log(".then hit");
-  //   console.log(data);
-  //   // clear values from form
-  //   $("#first").val("");
-  //   $("#email").val("");
-  //   $("#dob").val("");
-  //   $("#gender").val("");
-  //   $("#feet").val("");
-  //   $("#inches").val("");
-  //   $("#weight").val("");
-  //   $("#saf").val("");
-  //   $("#deficit").val("");
-
-  //   location.redirect("/dashboard");
-  // });
-  // });
-  // )}
 });
