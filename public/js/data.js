@@ -1,64 +1,49 @@
 // eslint-disable-next-line no-unused-vars
 var workouts = [
-  (fullBody = [
-    {
-      name: "barbell squat",
-      start: "https://www.bodybuilding.com/fun/2002/squat.jpg",
-      end: "https://www.bodybuilding.com/fun/2002/squat2.jpg",
-      equipment: "barbell",
-      type: "strength"
-    },
+  fullBody = [
     {
       name: "dumbbell shoulder press",
       start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/l/328_2.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/l/328_2.jpg",
       end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/l/328_1.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/l/328_1.jpg",
       equipment: "dumbbell",
-      type: "strength"
-    },
-    {
-      name: "dumbbell step ups",
-      start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/63/Male/l/63_2.jpg",
-      end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/63/Male/l/63_1.jpg",
-      equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "bentover barbell rows",
       start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/20/Male/l/20_1.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/20/Male/l/20_2.jpg",
       end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/20/Male/l/20_2.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/20/Male/l/20_1.jpg",
       equipment: "barbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "standing dumbbell curls",
       start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/223/Male/m/223_1.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/223/Male/m/223_2.jpg",
       end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/223/Male/m/223_2.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/223/Male/m/223_1.jpg",
       equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "alternating renegade rows",
       start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/506/Male/m/506_1.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/506/Male/l/506_2.jpg",
       end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/506/Male/l/506_2.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/506/Male/m/506_1.jpg",
       equipment: "kettlebell",
-      type: "strength"
-    },
-    {
-      name: "barbell bench press",
-      start: "https://www.bodybuilding.com/fun/schultz50abig.jpg",
-      end: "https://www.bodybuilding.com/fun/schultz50bbig.jpg",
-      equipment: "barbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "standing tricep dumbbell extension",
@@ -67,55 +52,44 @@ var workouts = [
       end:
         "https://www.bodybuilding.com/exercises/exerciseImages/sequences/345/Male/m/345_2.jpg",
       equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "dumbbell pullovers",
       start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/40/Male/m/40_2.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/40/Male/m/40_1.jpg",
       end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/40/Male/m/40_1.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/40/Male/m/40_2.jpg",
       equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "weighted suitcase crunch",
-      start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/2813/Female/l/2813_1.jpg",
-      end:
+      start: 
         "https://www.bodybuilding.com/exercises/exerciseImages/sequences/2813/Female/m/2813_2.jpg",
+      end: 
+        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/2813/Female/l/2813_1.jpg",
       equipment: "medicine ball",
-      type: "strength"
-    },
-    {
-      name: "jump squat",
-      start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/108/Female/m/108_1.jpg",
-      end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/108/Female/m/108_2.jpg",
-      equipment: "body only",
-      type: "plyometrics"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "push press",
       start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/186/Male/m/186_1.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/186/Male/m/186_3.jpg",
       end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/186/Male/m/186_3.jpg",
+      "https://www.bodybuilding.com/exercises/exerciseImages/sequences/186/Male/m/186_1.jpg",
       equipment: "barbell",
-      type: "olympic weightlifting"
-    }
-  ]),
-  (upperBody = [
-    {
-      name: "wide grip lat pulldowns",
-      start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/10/Male/m/10_1.jpg",
-      end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/10/Male/m/10_2.jpg",
-      equipment: "cable",
-      type: "strength"
-    },
+      type: "olympic weightlifting",
+      set: 3,
+      rep: 5 
+    }],
+  upperBody = [
     {
       name: "standing alternating curls",
       start:
@@ -123,7 +97,9 @@ var workouts = [
       end:
         "https://www.bodybuilding.com/exercises/exerciseImages/sequences/234/Male/m/234_1.jpg",
       equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "close grip lat pulldowns",
@@ -132,7 +108,9 @@ var workouts = [
       end:
         "https://www.bodybuilding.com/exercises/exerciseImages/sequences/14/Male/m/14_1.jpg",
       equipment: "cable",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "barbell bench press",
@@ -141,16 +119,9 @@ var workouts = [
       end:
         "https://www.bodybuilding.com/exercises/exerciseImages/sequences/360/Male/m/360_2.jpg",
       equipment: "barbell",
-      type: "strength"
-    },
-    {
-      name: "tricep dumbbell kick back",
-      start:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/348/Male/m/348_2.jpg",
-      end:
-        "https://www.bodybuilding.com/exercises/exerciseImages/sequences/348/Male/m/348_1.jpg",
-      equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "close grip barbell bench press",
@@ -215,8 +186,8 @@ var workouts = [
       equipment: "cable",
       type: "strength"
     }
-  ]),
-  (lowerBody = [
+  ],
+  lowerBody = [
     {
       name: "barbell squats",
       start:
@@ -325,8 +296,8 @@ var workouts = [
       equipment: "machine",
       type: "strength"
     }
-  ]),
-  (back = [
+  ],
+  back = [
     {
       name: "wide grip lat pulldowns",
       start:
@@ -399,8 +370,8 @@ var workouts = [
       mainMuscle: "lower back",
       type: "stretching"
     }
-  ]),
-  (biceps = [
+  ],
+  biceps = [
     {
       name: "preacher curls",
       start:
@@ -473,8 +444,8 @@ var workouts = [
       mainMuscle: "biceps",
       type: "strength"
     }
-  ]),
-  (triceps = [
+  ],
+  triceps = [
     {
       name: "skull crushers",
       start:
@@ -547,8 +518,8 @@ var workouts = [
       equipment: "cable",
       type: "strength"
     }
-  ]),
-  (chest = [
+  ],
+  chest = [
     {
       name: "barbell bench press",
       start:
@@ -621,8 +592,8 @@ var workouts = [
       equipment: "body only",
       type: "strength"
     }
-  ]),
-  (shoulders = [
+  ],
+  shoulders = [
     {
       name: "standing upright rows",
       start:
@@ -695,8 +666,8 @@ var workouts = [
       equipment: "barbell",
       type: "strength"
     }
-  ]),
-  (legs = [
+  ],
+  legs = [
     {
       name: "barbell squats",
       start:
@@ -733,5 +704,5 @@ var workouts = [
       equipment: "machine",
       type: "strength"
     }
-  ])
+  ]
 ];
