@@ -34,7 +34,7 @@ module.exports = function (app) {
             login: req.body.login,
             password: req.body.password,
             calories: req.body.calories,
-            proteins: req.body.protein,
+            proteins: req.body.proteins,
             carbs: req.body.carbs,
             fats: req.body.fats
           },
