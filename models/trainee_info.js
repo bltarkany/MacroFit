@@ -39,6 +39,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DATEONLY
     }
   });
-  console.log(trainee_info.id);
+  // console.log(trainee_info);
   return trainee_info;
 };

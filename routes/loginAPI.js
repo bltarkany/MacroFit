@@ -76,6 +76,7 @@ module.exports = function (app) {
   });
 
   // Delete a trainee's account
+  // eslint-disable-next-line no-unused-vars
   app.get("/api/traineeSignUp/validate", function (req, res) {
     db.sequelize
       .query(
@@ -89,9 +90,18 @@ module.exports = function (app) {
         }
       )
       .then(function (data) {
-        console.log("Data inserted: " + JSON.stringify(data, null, 2));
-        console.log(Object.values(data[0])[0]);
-        res.status(200).json(data[0]);
+        console.log(data);
+        console.log("Data's length: " + data.length);
+        if (data.length > 0) {
+          //successful login redirects to trainees dashboard denoted by ID and unique route
+          res.status(200).json(data[0]);
+          res.redirect("/dashboard/" + Object.values(data[0])[0] + "/" + Object.values(data[0])[1]);
+        } else {
+          //Otherwise bounce back to login page
+          location.reload(true);
+          alert("incorrect user/password");
+        }
+        // console.log(res);
       });
   });
 };
