@@ -25,6 +25,7 @@ p {
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
+  font-size: 130%;
 }
 
 html {
@@ -100,7 +101,7 @@ html {
   background: #457595;
 }
 
-#calendar:hover{
+#calendar:hover {
   cursor: default;
   background: #5085a5;
 }
@@ -176,22 +177,28 @@ canvas {
   border-right: none;
 }
 
-.posAll{
+.posAll {
   grid-column: span 3;
 }
 
-.ccLabel{
-  font-size: 200%;
+.ccLabel {
+  font-size: 130%;
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: 2rem;
 }
 
-.ccLabel2{
+.ccLabel2 {
   font-size: 50%;
 }
 
+#ccMotive {
+  font-size: 150%;
+  margin-top: 2rem;
+}
+
 /* WORKOUT box */
-.workoutOptions{
+.workoutOptions {
   z-index: 9;
   display: flex;
   width: 100%;
@@ -200,20 +207,20 @@ canvas {
   flex-wrap: wrap;
 }
 
-.option{
-background: #8fc1e3;
-border: .1rem solid;
-padding: .5rem;
-color: #f7f9fb;
-cursor: pointer;
+.option {
+  background: #8fc1e3;
+  border: .1rem solid;
+  padding: .5rem;
+  color: #f7f9fb;
+  cursor: pointer;
 }
 
-.option:hover{
+.option:hover {
   color: #8fc1e3;
   background: #5085a5;
 }
 
-.workoutDashContainer{
+.workoutDashContainer {
   display: flex;
   justify-content: space-evenly;
   align-content: space-between;
@@ -221,14 +228,15 @@ cursor: pointer;
   padding: 1rem;
 }
 
-.verticalContainer{
+.verticalContainer {
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
-  width:90%;
+  width: 90%;
   justify-content: space-evenly;
   flex-direction: column;
 }
+
 /* ------------------INDEX PAGE END------------------*/
 
 /* ------------------WOKROUT PAGE START------------------*/
@@ -259,6 +267,7 @@ cursor: pointer;
   border-radius: .2rem;
   text-align: center;
 }
+
 /* ------------------WOKROUT PAGE START------------------*/
 
 /* ------------------FORM PAGE START------------------*/
