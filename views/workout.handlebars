@@ -1,14 +1,26 @@
-<h1>Your workout plan</h1>
+<div class="box posAll">
+  <div class="boxHeader">Workout Database</div>
 
-{{workout}}
-<br>
-<hr>
-<ul>
+  {{!-- SINGLE EXAMPLE --}}
+  <div class="workoutContainer">
+    <p>Barbell Squat</p>
+    <div class="workout">
+      <div class="workoutPicDiv">
+        <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat.jpg" alt="squatEX1">
+      </div>
+      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg" alt="squatEX2">
+      <div class="workoutDesc">
+        <p>Barbell</p>
+        <hr>
+        <p>Lower Body</p>
+      </div>
+    </div>
+  </div>
+  {{!-- SINGLE EXAMPLE --}}
+
   {{#each exercise}}
-  <li>
-    {{name}}
-    {{equipment}}
-    {{type}}
-  </li>
+  {{!-- SINGLE EXERCISE --}}
+  {{!-- SINGLE EXERCISE --}}
   {{/each}}
-</ul>
+
+</div>

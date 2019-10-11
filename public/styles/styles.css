@@ -9,7 +9,7 @@ font-family: 'Vast Shadow', cursive;
 font-family: 'Montserrat', sans-serif;
  */
 
-h1{
+h1 {
   font-size: 300%;
   text-align: center;
 }
@@ -166,6 +166,39 @@ canvas {
   border-right: none;
 }
 
+.posAll{
+  grid-column: span 3;
+}
+
+/* WORKOUT BOX */
+
+.workoutContainer {
+  padding: 1rem;
+  width: 30%;
+}
+
+.workout {
+  display: flex;
+  width: 90%;
+}
+
+.workoutPicDiv {
+  order: 1;
+}
+
+.workoutPic {
+  width: 10vw;
+  height: auto;
+}
+
+.workoutDesc {
+  order: 3;
+  padding: 1rem;
+  border: .2rem #c7c9cb solid;
+  border-radius: .2rem;
+  text-align: center;
+}
+
 /* ------------------INDEX PAGE END------------------*/
 
 /* ------------------FORM PAGE START------------------*/
@@ -178,27 +211,29 @@ canvas {
   place-items: center;
 }
 
-.subtext{
+.subtext {
   text-align: center;
   cursor: pointer;
   margin: .2rem;
   font-size: 100%;
 }
 
-.subtext:hover{
+.subtext:hover {
   color: #5085a5;
 }
 
-#oldBox, #newBox{
+#oldBox,
+#newBox {
   transition: visibility 0s, opacity 0.5s linear;
 }
+
 .login {
   display: none;
   grid-column: 2;
   z-index: 4;
 }
 
-#actPic{
+#actPic {
   height: auto;
   width: 100%;
   grid-column: 2;
@@ -267,7 +302,7 @@ form {
   grid-column: span 2;
 }
 
-.hidden{
+.hidden {
   display: none;
   visibility: hidden;
   opacity: 0;
