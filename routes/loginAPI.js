@@ -47,11 +47,18 @@ module.exports = function (app) {
         console.log("Data inserted: " + JSON.stringify(data, null, 2));
         console.log(signUp.userID);
         res.status(200).json(data[0]);
+        return 0;
       })
       .catch(function (err) {
         console.log(err);
-        res.end("The username: " + req.body.login + " is already taken! Please choose another.");
-        return -1;
+        // Tests for dupe login entry
+        if (err.errno === 1062) {
+          res.status(418).end("The username: " + req.body.login + " is already taken! Please choose another.");
+          alert("The username: " + req.body.login + "taken.");
+          return -1;
+        } else {
+          res.status(400).end("Oops, something went wrong!");
+        }
       });
   });
 
