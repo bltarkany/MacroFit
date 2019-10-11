@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     // eslint-disable-next-line eqeqeq
     if(current==max){
-        $("#ccMotive").text("You've hit your goal for today!");
+        $("#ccMotive").text("You've met your goal for today!");
     }
     else{
         $("#ccMotive").text("Keep Up Your Healthy Diet!");
@@ -79,5 +79,19 @@ $(document).ready(function () {
     });
 
     ///////////// Workout Box /////////////  
+
+    ///////////// Achievement Box /////////////  
+    createAchievement ("Hit Macro Goal","10/10/2019");
+    createAchievement ("Hit Calorie Goal","10/10/2019");
+    createAchievement ("New PR &lt;Bench Press&gt;","10/8/2019");
+    createAchievement ("Finished Workout","10/8/2019");
+    createAchievement ("Created Account","10/7/2019");
+    function createAchievement (name,date){
+        var newLabel = $("<div>");
+        newLabel.addClass("ccLabel");
+        newLabel.html("<span>&#10003;</span> "+name+" <span class='ccLabel2'>"+date+"</span><hr>");
+        $("#achContainer").append(newLabel);
+    }
+    ///////////// Achievement Box /////////////  
 
 });
