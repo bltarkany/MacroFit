@@ -4,38 +4,110 @@
 
   <div id="calories" class="boxTop">
     {{!-- Calorie Counter --}}
+    <h1 id="ccMotive"></h1>
     <canvas id="counter"></canvas>
-    <div id="current">800</div>
-    <div id="max">2000</div>
+    {{!-- cal info divs --}}
+    <div id="current" data-current="800"></div>
+    <div id="max" data-max="2000"></div>
 
     {{!-- Calorie Info --}}
+    <div class="ccLabel">
+      <span id="caloriesNow">
+      </span>
+      /
+      <span id="caloriesFinal">
+      </span>
+      cal.
+    </div>
+
+    <br>
+    <h2 class="boxHeader">Nutritional Breakdown</h2>
+    {{!-- Nutrition Breakdown --}}
+    <div class="verticalContainer">
+      {{!-- FATS --}}
+      <div class="ccLabel">
+        Fats<br>
+        <span id="fatNow" data-fatnow="100">
+        </span>
+        /
+        <span id="fatFinal" data-fatfinal="200">
+        </span> g
+        <hr>
+      </div>
+
+      {{!-- PROTEIN --}}
+      <div class="ccLabel">
+        Protein<br>
+        <span id="proteinNow" data-proteinnow="200">
+        </span>
+        /
+        <span id="proteinFinal" data-proteinfinal="300">
+        </span> g
+        <hr>
+      </div>
+
+      {{!-- CARBnod --}}
+      <div class="ccLabel">
+        Carbs<br>
+        <span id="carbNow" data-carbnow="300">
+        </span>
+        /
+        <span id="carbFinal" data-carbfinal="400">
+        </span> g
+      </div>
+    </div>
+
   </div>
 
 </div>
 
 <div class="box pos1">
-  <div class="boxHeader">Today's Workout
+  <div class="boxHeader">Your Workout
   </div>
 
-  {{!-- Workouts --}}
+  {{!-- Options of what to display --}}
+  <div class="workoutOptions">
+    <div class="option" id="fb">Full Body</div>
+    <div class="option" id="ub">Upper Body</div>
+    <div class="option" id="lb">Lower Body</div>
+    <div class="option" id="foc">Focused</div>
+  </div>
 
-  {{!-- SINGLE EXERCISE --}}
-  <div class="workoutContainer">
-    <p>Exercise Name</p>
-    <div class="workout">
-      <div class="workoutPicDiv">
-        <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat.jpg" alt="squatEX">
-      </div>
-      <div class="workoutDesc">
-        test
-      </div>
+  <div class="routine"></div>
+
+  {{!-- Dynamic Exercise --}}
+  <div class="workoutDashContainer">
+    <div class="workoutExample">
+      <p>Exercise</p>
+      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg">
+    </div>
+
+    <div class="workoutExample">
+      <p>Exercise</p>
+      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg">
+    </div>
+
+    <div class="workoutExample">
+      <p>Exercise</p>
+      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg">
+    </div>
+
+    <div class="workoutExample">
+      <p>Exercise</p>
+      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg">
     </div>
   </div>
-  {{!-- SINGLE EXERCISE --}}
+
+
 
 </div>
 
 <div class="box pos2">
   <div class="boxHeader">Achievements
   </div>
+
+  {{!-- Achievements --}}
+  <div class="verticalContainer" id="achContainer">
+  </div>
+
 </div>
