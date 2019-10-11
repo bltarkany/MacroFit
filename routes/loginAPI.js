@@ -78,6 +78,7 @@ module.exports = function (app) {
   // Delete a trainee's account
   // eslint-disable-next-line no-unused-vars
   app.get("/api/traineeSignUp/validate", function (req, res) {
+    console.log("credentials entered: " + req.body.login + " " + req.body.password);
     db.sequelize
       .query(
         "CALL validateLogin(:login, :password)", {
