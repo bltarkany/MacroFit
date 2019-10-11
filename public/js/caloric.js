@@ -204,7 +204,6 @@ $(document).ready(function () {
       }
     };
 
-
     // cb
     fats(deficit, newdef);
     console.log(mac, protein, carbs, fats);
@@ -253,7 +252,7 @@ $(document).ready(function () {
       $("#last").val(""),
       $("#uniqueId").val(""),
       $("#password").val(""),
-      $("#dob").val(),
+      $("#dob").val(""),
       $("#gender").val("");
       $("#feet").val("");
       $("#inches").val("");
@@ -262,20 +261,9 @@ $(document).ready(function () {
       $("#deficit").val("");
     });
 
-    // window.location.href = "/dashboard/";
-    // return false;
+    window.location.href = "/dashboard/";
+    return false;
     // window.location.replace("/dashboard");
-
-    // ===================================
-    // post call for trainee macro table
-    // $.ajax("/api/traineeSignUp/macro", {
-    //   type: "POST",
-    //   data: newmealdaily
-    // }).then(function (data) {
-    //   console.log("calorie count loaded.");
-    //   console.log(data);
-    // });
-
   });
 
 });

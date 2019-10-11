@@ -66,7 +66,7 @@ and deploy from `heroku` utilizing their built in database `jaws_db`
 
 1. Create a GitHub repo called `projectfitness` and clone it to your computer.
 
-2. Make a package.json file by running `npm init` from the command line.
+2. Create a `.gitignore`. Make a package.json file by running `npm init` from the command line.
 
 3. Install the Express npm package: `npm install express`.
 
@@ -74,7 +74,7 @@ and deploy from `heroku` utilizing their built in database `jaws_db`
 
 5. Install the Handlebars npm package: `npm install express-handlebars`.
 
-6. Install MySQL npm package: `npm install mysql`.
+6. Install MySQL 2 npm package and sequelize: `npm install mysql2` & `npm install sequelize`.
 
 7. Require the following npm packages inside of the server.js file:
    * express
