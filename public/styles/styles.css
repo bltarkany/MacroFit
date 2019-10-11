@@ -9,6 +9,11 @@ font-family: 'Vast Shadow', cursive;
 font-family: 'Montserrat', sans-serif;
  */
 
+a{
+  text-decoration: none;
+  color: #f7f9fb;
+}
+
 h1 {
   font-size: 300%;
   text-align: center;
@@ -185,7 +190,6 @@ canvas {
   font-size: 130%;
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: 2rem;
 }
 
 .ccLabel2 {
