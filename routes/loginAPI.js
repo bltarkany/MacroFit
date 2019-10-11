@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 var db = require("../models");
 var signUp = {
   userID: ""
@@ -7,6 +8,7 @@ var signUp = {
 module.exports = function (app) {
   // Create a new signUp
   app.post("/api/traineeSignUp", function (req, res) {
+    console.log(req.body);
     var today = new Date();
     // eslint-disable-next-line no-unused-vars
     var date =
@@ -18,26 +20,23 @@ module.exports = function (app) {
     //populates trainee_info with user entered data. insertTraineeInfo also returns the id assigned to the new sign up
     db.sequelize
       .query(
-        "CALL insertTraineeInfo(:param1,:param2,:param3,:param4,:param5,:param6,:param7,:param8,:param9,:param10,:param11,:param12,:param13,:param14,:param15,:param16,:param17,:param18)", {
+        "CALL insertTraineeInfo(:firstName, :lastName, :age, :gender, :weight, :height_ft, :height_in, :activity_level, :deficit, :login, :password, :calories, :proteins, :carbs, :fats)", {
           replacements: {
-            param1: req.body.firstName,
-            param2: req.body.lastName,
-            param3: req.body.age,
-            param4: req.body.gender,
-            param5: req.body.weight,
-            param6: req.body.height_FT,
-            param7: req.body.height_IN,
-            param8: req.body.activity_Level,
-            param9: req.body.deficit,
-            param10: req.body.email,
-            param11: req.body.phoneNumber,
-            param12: req.body.address,
-            param13: req.body.city,
-            param14: req.body.state,
-            param15: req.body.zip,
-            param16: date,
-            param17: req.body.login,
-            param18: req.body.password
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            age: req.body.age,
+            gender: req.body.gender,
+            weight: req.body.weight,
+            height_ft: req.body.height_FT,
+            height_in: req.body.height_IN,
+            activity_level: req.body.activity_Level,
+            deficit: req.body.deficit,
+            login: req.body.login,
+            password: req.body.password,
+            calories: req.body.calories,
+            proteins: req.body.proteins,
+            carbs: req.body.carbs,
+            fats: req.body.fats
           },
           // type: db.sequelize.QueryTypes.SELECT,
           raw: true
@@ -48,6 +47,18 @@ module.exports = function (app) {
         console.log("Data inserted: " + JSON.stringify(data, null, 2));
         console.log(signUp.userID);
         res.status(200).json(data[0]);
+        return 0;
+      })
+      .catch(function (err) {
+        console.log(err);
+        // Tests for dupe login entry
+        if (err.errno === 1062) {
+          res.status(418).end("The username: " + req.body.login + " is already taken! Please choose another.");
+          alert("The username: " + req.body.login + "taken.");
+          return -1;
+        } else {
+          res.status(400).end("Oops, something went wrong!");
+        }
       });
   });
 
@@ -61,6 +72,36 @@ module.exports = function (app) {
       })
       .then(function (data) {
         res.json(data);
+      });
+  });
+
+  // Delete a trainee's account
+  // eslint-disable-next-line no-unused-vars
+  app.get("/api/traineeSignUp/validate", function (req, res) {
+    db.sequelize
+      .query(
+        "CALL validateLogin(:login, :password)", {
+          replacements: {
+            login: req.body.login,
+            password: req.body.password
+          },
+          // type: db.sequelize.QueryTypes.SELECT,
+          raw: true
+        }
+      )
+      .then(function (data) {
+        console.log(data);
+        console.log("Data's length: " + data.length);
+        if (data.length > 0) {
+          //successful login redirects to trainees dashboard denoted by ID and unique route
+          res.status(200).json(data[0]);
+          res.redirect("/dashboard/" + Object.values(data[0])[0] + "/" + Object.values(data[0])[1]);
+        } else {
+          //Otherwise bounce back to login page
+          location.reload(true);
+          alert("incorrect user/password");
+        }
+        // console.log(res);
       });
   });
 };

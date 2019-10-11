@@ -4,6 +4,7 @@ module.exports = function (sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER,
       min: 10000,
+      autoIncrement: true,
       primaryKey: true
     },
     FirstName: {
@@ -34,33 +35,10 @@ module.exports = function (sequelize, DataTypes) {
     Deficit: {
       type: DataTypes.INTEGER
     },
-    Email: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    PhoneNumber: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    Address: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    City: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    State: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    zip5: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
     EnrollDate: {
       type: DataTypes.DATEONLY
     }
   });
+  // console.log(trainee_info);
   return trainee_info;
 };
