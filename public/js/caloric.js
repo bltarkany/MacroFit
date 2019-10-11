@@ -1,9 +1,8 @@
 /* eslint-disable camelcase */
-/* eslint-disable prettier/prettier */
 // on load up of page
 
 $(document).ready(function () {
-  console.log("loaded");
+  console.log("caloric loaded");
 
   ///////////// LOGIN PAGE /////////////
   $(".openOld").click(function () {
@@ -54,8 +53,7 @@ $(document).ready(function () {
       newClient.saf,
       newClient.deficit
     );
-    // ----------------------------------------------------------------------
-    // saf configurations--
+    // saf configurations
     var age = getAge(newClient.dob);
     var weight = convertKg(newClient.weight);
     var height = convertHeight(newClient.feet, newClient.inches);
@@ -67,10 +65,8 @@ $(document).ready(function () {
         rmr = womensRMR(weight, height, age);
       }
     };
-
     // cb
     rmr(weight, height, age);
-
     console.log(age, weight, height, rmr);
 
     // Mens RMR
@@ -89,8 +85,6 @@ $(document).ready(function () {
     }
 
     // function to convert Date of Birth to age
-
-    // eslint-disable-next-line no-unused-vars
     function getAge(dob) {
       var today = new Date();
       var birth = new Date(dob);
@@ -217,9 +211,9 @@ $(document).ready(function () {
 
     // ---------------------------------------------------------------
     // **caloric and macro object
-    var newmealdaily = {
+    var newMacro = {
       calories: newdef,
-      protein: protein,
+      proteins: protein,
       carbs: carbs,
       fats: fats
     };
@@ -232,38 +226,34 @@ $(document).ready(function () {
       gender: newClient.gender,
       weight: parseFloat(newClient.weight),
       height_FT: parseFloat(newClient.feet),
-      height_IN: parseFloat(newClient.inches),      
+      height_IN: parseFloat(newClient.inches),
       activity_Level: newClient.saf,
       deficit: parseFloat(newClient.deficit),
       login: newClient.uniqueId,
-      password: newClient.password
+      password: newClient.password,
+      calories: newMacro.calories,
+      proteins: newMacro.proteins,
+      carbs: newMacro.carbs,
+      fats: newMacro.fats
     };
-
-    console.log(newmealdaily);
+    // info tests
+    console.log(newMacro);
     console.log(newtraineeinfo);
 
-    // ================test===============
-    // $.ajax("/api/mealDaily", {
-    //   type: "POST",
-    //   data: newmealdaily
-    // }).then(function() {
-    //   console.log("calorie count loaded.");
-    // });
-    // ===================================
-
+    // post call for trainee sign up
     $.ajax("/api/traineeSignUp", {
-
       type: "POST",
       data: newtraineeinfo
-
     }).then(function (data) {
       console.log("created new trainee");
       console.log(data);
 
       // clear values from form
       $("#first").val("");
-      $("#email").val("");
-      $("#dob").val("");
+      $("#last").val(""),
+      $("#uniqueId").val(""),
+      $("#password").val(""),
+      $("#dob").val(),
       $("#gender").val("");
       $("#feet").val("");
       $("#inches").val("");
@@ -272,11 +262,20 @@ $(document).ready(function () {
       $("#deficit").val("");
     });
 
-    window.location.href = "/dashboard/";
-    return false;
-
-
+    // window.location.href = "/dashboard/";
+    // return false;
     // window.location.replace("/dashboard");
+
+    // ===================================
+    // post call for trainee macro table
+    // $.ajax("/api/traineeSignUp/macro", {
+    //   type: "POST",
+    //   data: newmealdaily
+    // }).then(function (data) {
+    //   console.log("calorie count loaded.");
+    //   console.log(data);
+    // });
+
   });
 
 });

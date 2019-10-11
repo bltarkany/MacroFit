@@ -8,6 +8,7 @@ var signUp = {
 module.exports = function (app) {
   // Create a new signUp
   app.post("/api/traineeSignUp", function (req, res) {
+    console.log(req.body);
     var today = new Date();
     // eslint-disable-next-line no-unused-vars
     var date =
