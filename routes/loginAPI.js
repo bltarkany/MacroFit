@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 var db = require("../models");
 var signUp = {
   userID: ""
@@ -18,26 +19,19 @@ module.exports = function (app) {
     //populates trainee_info with user entered data. insertTraineeInfo also returns the id assigned to the new sign up
     db.sequelize
       .query(
-        "CALL insertTraineeInfo(:param1,:param2,:param3,:param4,:param5,:param6,:param7,:param8,:param9,:param10,:param11,:param12,:param13,:param14,:param15,:param16,:param17,:param18)", {
+        "CALL insertTraineeInfo(:firstName, :lastName, :age, :gender, :weight, :height_ft, :height_in, :activity_level, :deficit, :login, :password)", {
           replacements: {
-            param1: req.body.firstName,
-            param2: req.body.lastName,
-            param3: req.body.age,
-            param4: req.body.gender,
-            param5: req.body.weight,
-            param6: req.body.height_FT,
-            param7: req.body.height_IN,
-            param8: req.body.activity_Level,
-            param9: req.body.deficit,
-            param10: req.body.email,
-            param11: req.body.phoneNumber,
-            param12: req.body.address,
-            param13: req.body.city,
-            param14: req.body.state,
-            param15: req.body.zip,
-            param16: date,
-            param17: req.body.login,
-            param18: req.body.password
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            age: req.body.age,
+            gender: req.body.gender,
+            weight: req.body.weight,
+            height_ft: req.body.height_FT,
+            height_in: req.body.height_IN,
+            activity_level: req.body.activity_Level,
+            deficit: req.body.deficit,
+            login: req.body.login,
+            password: req.body.password
           },
           // type: db.sequelize.QueryTypes.SELECT,
           raw: true
