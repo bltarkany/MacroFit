@@ -11,6 +11,9 @@ module.exports = function (sequelize, DataTypes) {
     },
     Password: {
       type: DataTypes.STRING
+    },
+    Route: {
+      type: DataTypes.STRING
     }
   });
   return trainee_login;

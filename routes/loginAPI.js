@@ -20,7 +20,7 @@ module.exports = function (app) {
     //populates trainee_info with user entered data. insertTraineeInfo also returns the id assigned to the new sign up
     db.sequelize
       .query(
-        "CALL insertTraineeInfo(:firstName, :lastName, :age, :gender, :weight, :height_ft, :height_in, :activity_level, :deficit, :login, :password)", {
+        "CALL insertTraineeInfo(:firstName, :lastName, :age, :gender, :weight, :height_ft, :height_in, :activity_level, :deficit, :login, :password, :calories, :proteins, :carbs, :fats)", {
           replacements: {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -32,7 +32,11 @@ module.exports = function (app) {
             activity_level: req.body.activity_Level,
             deficit: req.body.deficit,
             login: req.body.login,
-            password: req.body.password
+            password: req.body.password,
+            calories: req.body.calories,
+            proteins: req.body.protein,
+            carbs: req.body.carbs,
+            fats: req.body.fats
           },
           // type: db.sequelize.QueryTypes.SELECT,
           raw: true
@@ -43,6 +47,11 @@ module.exports = function (app) {
         console.log("Data inserted: " + JSON.stringify(data, null, 2));
         console.log(signUp.userID);
         res.status(200).json(data[0]);
+      })
+      .catch(function (err) {
+        console.log(err);
+        res.end("The username: " + req.body.login + " is already taken! Please choose another.");
+        return -1;
       });
   });
 
@@ -56,6 +65,26 @@ module.exports = function (app) {
       })
       .then(function (data) {
         res.json(data);
+      });
+  });
+
+  // Delete a trainee's account
+  app.get("/api/traineeSignUp/validate", function (req, res) {
+    db.sequelize
+      .query(
+        "CALL validateLogin(:login, :password)", {
+          replacements: {
+            login: req.body.login,
+            password: req.body.password
+          },
+          // type: db.sequelize.QueryTypes.SELECT,
+          raw: true
+        }
+      )
+      .then(function (data) {
+        console.log("Data inserted: " + JSON.stringify(data, null, 2));
+        console.log(Object.values(data[0])[0]);
+        res.status(200).json(data[0]);
       });
   });
 };
