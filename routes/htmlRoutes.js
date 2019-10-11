@@ -1,5 +1,4 @@
 var db = require("../models");
-
 module.exports = function(app) {
   // Intro Form
   app.get("/", function(req, res) {

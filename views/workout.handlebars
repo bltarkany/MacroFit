@@ -2,25 +2,37 @@
   <div class="boxHeader">Workout Database</div>
 
   {{!-- SINGLE EXAMPLE --}}
+  {{#each fb}}
   <div class="workoutContainer">
-    <p>Barbell Squat</p>
+    <ul>
+    <p style="text-transform: uppercase">
+    {{name}}
+    </p>
+
     <div class="workout">
       <div class="workoutPicDiv">
-        <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat.jpg" alt="squatEX1">
+        <img class="workoutPic" src="{{start}}" alt="squatEX1">
       </div>
-      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg" alt="squatEX2">
+      <img class="workoutPic" src="{{end}}" alt="squatEX2">
       <div class="workoutDesc">
-        <p>Barbell</p>
+        <p>EQUIPMENT: {{equipment}}</p>
         <hr>
-        <p>Lower Body</p>
+        <p>TYPE: {{type}}</p>
       </div>
+
+      <div class="workoutSet">
+        <p>
+          SETS: {{set}}
+        </p>
+        <hr>
+        <p>
+          REPS: {{rep}}
+        </p>
+      </div>
+
     </div>
+
+    </ul>
   </div>
-  {{!-- SINGLE EXAMPLE --}}
-
-  {{#each exercise}}
-  {{!-- SINGLE EXERCISE --}}
-  {{!-- SINGLE EXERCISE --}}
   {{/each}}
-
 </div>
