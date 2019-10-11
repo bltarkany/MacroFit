@@ -4,6 +4,7 @@ module.exports = function (sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER,
       min: 10000,
+      autoIncrement: true,
       primaryKey: true
     },
     FirstName: {
@@ -38,5 +39,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DATEONLY
     }
   });
+  console.log(trainee_info.id);
   return trainee_info;
 };
