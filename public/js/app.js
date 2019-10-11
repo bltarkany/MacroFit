@@ -11,10 +11,29 @@ $(document).ready(function () {
     $("#date").text(m + "/" + d + "/" + y);
 
     ///////////// Calorie Counter /////////////
-    var current = $("#current").text();
-    var max = $("#max").text();
+    var current = $("#current").attr("data-current");
+    var max = $("#max").attr("data-max");
     var canvas = document.getElementById("counter");
     var ctx = canvas.getContext("2d");
+
+
+    // eslint-disable-next-line eqeqeq
+    if(current==max){
+        $("#ccMotive").text("You've met your goal for today!");
+    }
+    else{
+        $("#ccMotive").text("Keep Up Your Healthy Diet!");
+    }
+
+    // Nutrition breakdown write-up
+    $("#fatNow").text($("#fatNow").attr("data-fatnow"));
+    $("#fatFinal").text($("#fatFinal").attr("data-fatfinal"));
+
+    $("#proteinNow").text($("#proteinNow").attr("data-proteinnow"));
+    $("#proteinFinal").text($("#proteinFinal").attr("data-proteinfinal"));
+
+    $("#carbNow").text($("#carbNow").attr("data-carbnow"));
+    $("#carbFinal").text($("#carbFinal").attr("data-carbfinal"));
 
     var posX = canvas.width / 2;
     var posY = canvas.height / 2;
@@ -24,7 +43,8 @@ $(document).ready(function () {
 
     ctx.lineCap = "round";
     renderCircle();
-
+    $("#caloriesNow").text(current);
+    $("#caloriesFinal").text(max);
     function renderCircle() {
         var degrees = 0;
         var arcInterval = setInterval(function () {
@@ -53,14 +73,25 @@ $(document).ready(function () {
     }
     ///////////// Calorie Counter /////////////
 
-
-    ///////////// LOGIN PAGE /////////////
-    $("#openOld").click( function(){
-        $("#newBox").removeClass("hidden");
-        $("#oldBox").addClass("hidden");
-        console.log("Box toggled");
+    ///////////// Workout Box /////////////  
+    $("#fb").click(function(){
+        $(".workoutDashContainer").empty();
     });
 
-    ///////////// LOGIN PAGE /////////////  
+    ///////////// Workout Box /////////////  
+
+    ///////////// Achievement Box /////////////  
+    createAchievement ("Hit Macro Goal","10/10/2019");
+    createAchievement ("Hit Calorie Goal","10/10/2019");
+    createAchievement ("New PR &lt;Bench Press&gt;","10/8/2019");
+    createAchievement ("Finished Workout","10/8/2019");
+    createAchievement ("Created Account","10/7/2019");
+    function createAchievement (name,date){
+        var newLabel = $("<div>");
+        newLabel.addClass("ccLabel");
+        newLabel.html("<span>&#10003;</span> "+name+" <span class='ccLabel2'>"+date+"</span><hr>");
+        $("#achContainer").append(newLabel);
+    }
+    ///////////// Achievement Box /////////////  
 
 });
