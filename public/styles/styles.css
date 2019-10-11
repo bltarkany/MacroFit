@@ -170,7 +170,16 @@ canvas {
   grid-column: span 3;
 }
 
-/* WORKOUT BOX */
+/* WORKOUT box */
+.workoutOptions{
+  display: flex;
+  background: red;
+  width: 100%;
+}
+
+/* ------------------INDEX PAGE END------------------*/
+
+/* ------------------WOKROUT PAGE START------------------*/
 
 .workoutContainer {
   padding: 1rem;
@@ -198,8 +207,7 @@ canvas {
   border-radius: .2rem;
   text-align: center;
 }
-
-/* ------------------INDEX PAGE END------------------*/
+/* ------------------WOKROUT PAGE START------------------*/
 
 /* ------------------FORM PAGE START------------------*/
 .formGrid {
