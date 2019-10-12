@@ -81,17 +81,16 @@ module.exports = function (app) {
 
   // Validate login creds and render personal dashboard
   // eslint-disable-next-line no-unused-vars
-  app.post("/api/traineeSignUp/validate", function (req, res) {
-    console.log(req.body);
-    console.log("credentials entered: " + req.body.login + " " + req.body.password);
+  app.get("/api/traineeSignUp/validate/:login/:password", function (req, res) {
+    console.log("credentials entered: " + req.params.login + " " + req.params.password);
     db.sequelize
       .query(
         "CALL validateLogin(:login, :password)", {
           replacements: {
-            login: req.body.login,
-            password: req.body.password
+            login: req.params.login,
+            password: req.params.password
           },
-          // type: db.sequelize.QueryTypes.SELECT,
+          type: db.sequelize.QueryTypes.SELECT,
           raw: true
         }
       )
@@ -102,22 +101,11 @@ module.exports = function (app) {
         console.log(url);
         if (data.length > 0) {
           console.log("hit this");
-          loginCreds.id = Object.values(data[0])[0];
-          loginCreds.route = Object.values(data[0])[1];
-          //successful login redirects to trainees dashboard denoted by ID and unique route
-          // res.status(200).json(data[0]);
-          // window.location.replace(url);
-          console.log(data);
-          console.log(url);
-          console.log(loginCreds);
-          app.get(url, function (data) {
-            db.sequelize.findAll({})
-            console.log(data);
-            console.log("hit here");
-          });
+          console.log(JSON.stringify(data[0], null, 2));
+          // res.status(200).json(data[0])
+          res.redirect("/dashboard");
+          console.log("now hits this");
         } else {
-          //Otherwise bounce back to login page
-          // location.reload(true);
           res.status(200).json(data[0]);
           alert("incorrect user/password");
         }

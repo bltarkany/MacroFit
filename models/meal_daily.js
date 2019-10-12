@@ -22,5 +22,15 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER
         }
     });
+
+    trainee_meal_daily.associate = function (models) {
+        // We're saying that a Post should belong to an Author
+        // A Post can't be created without an Author due to the foreign key constraint
+        trainee_meal_daily.belongsTo(models.trainee_macro, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    };
     return trainee_meal_daily;
 };
