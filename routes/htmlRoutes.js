@@ -7,15 +7,17 @@ module.exports = function (app) {
     });
   });
 
-  // Load dashboard page
-  app.get("/dashboard/10/cd0981c33b36f71", function (req, res) {
+  // Load dashboard page HARDCODE
+  app.get("/dashboard/2/cd0981c33b36f71", function (req, res) {
     db.trainee_macro
       .findOne({
         where: {
-          id: 10
+          id: 2
         }
+        // ,include: db.trainee_meal_daily
       })
       .then(function (data) {
+        // res.json(data);
         res.render("index", {
           macro: data
         });

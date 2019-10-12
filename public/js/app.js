@@ -87,19 +87,34 @@ $(document).ready(function () {
     };
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        // eslint-disable-next-line eqeqeq
-        if (event.target == modal) {
-            modal.style.display = "none";
-            clearMeal();
-        }
-    };
+    // window.onclick = function (event) {
+    //     // eslint-disable-next-line eqeqeq
+    //     if (event.target == modal) {
+    //         modal.style.display = "none";
+    //         clearMeal();
+    //     }
+    // };
 
     //--------------------------ADD MACRO POST METHOD--------------------------
     $("#addMacro").on("click", function(){
-        $.ajax("ROUTE",{
+        console.log("submit clicked");
+        var cal = $("#cal").val().trim();
+        var fat = $("#fat").val().trim();
+        var prot = $("#prot").val().trim();
+        var carb = $("#carb").val().trim();
+        var newMacro = {
+            id: 2,
+            calories: cal,
+            protein: prot,
+            carbs: carb,
+            fats: fat
+        };
+
+        var route = "/api/dashboard/mealSummary/2";
+
+        $.ajax(route,{
             type:"POST",
-            data: currentMacros
+            data: newMacro
         }).then(function(data){
             console.log("macros added");
             console.log(data);
