@@ -78,10 +78,12 @@ and deploy from `heroku` utilizing their built in database `jaws_db`
 
 7. Require the following npm packages inside of the server.js file:
    * express
+   * express-handlebars
+   * dotenv
 
 #### DB Setup
 
-1. Inside your `burger` directory, create a folder named `db`.
+1. Inside your `trainee` directory, create a folder named `db`.
 
 2. In the `db` folder, create a file named `schema.sql`. Write SQL queries this file that do the following:
 
