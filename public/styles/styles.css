@@ -266,6 +266,7 @@ canvas {
 .workoutContainer {
   padding: 1rem;
   width: 30%;
+  margin-left: 10vw;
 }
 
 .workout {
