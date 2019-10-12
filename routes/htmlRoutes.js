@@ -39,9 +39,9 @@ module.exports = function (app) {
         //----------------------------------------//
 
         // ---------UNCOMMENT BELOW FOR LIVE------- //
-        res.render("index", {
+        setTimeout(res.render("index", {
           macro: data
-        });
+        }), 500);
         //------------------------------------------//
       });
   });
