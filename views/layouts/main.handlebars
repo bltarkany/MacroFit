@@ -15,7 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   {{!-- Title --}}
-  <title>Home Page</title>
+  <title>MacroFit</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
     <div class="sideNav">
 
       {{!-- Nav Title --}}
-      <div class="navTitle">Project Fitness</div>
+      <div class="navTitle">Macro Fit</div>
 
       {{!-- navLink --}}
       <div class="navLinks">
@@ -36,13 +36,16 @@
         <div class="nav" id="calendar"><span id="date">Now</span></div>
 
         {{!-- My Account --}}
-        <div class="nav" id="account">My Profile</div>
+        <a href="/dashboard"><div class="nav" id="account">My Dashboard</div></a>
 
         {{!-- Nutrition --}}
-        <div class="nav" id="nutrition">Nutrition</div>
+        <div class="nav" id="nutrition">Nutrition Profile</div>
 
         {{!-- Workout --}}
-        <div class="nav" id="workout">Workout</div>
+        <a href="/workout"><div class="nav" id="workout">Workouts</div></a>
+
+        {{!-- Logout --}}
+        <a href="/"><div class="nav" id="logout">Log Out</div></a>
 
       </div>
     </div>
@@ -55,6 +58,7 @@
   </div>
 
   {{!-- Website f(x) JS --}}
+  <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>
 

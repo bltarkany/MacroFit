@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     {{!-- Title --}}
-    <title>Project Fitness</title>
+    <title>MacroFit</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 
             {{!-- ////////////// EXISTING ACCOUNT FORM////////////// --}}
             <div class="introBox" id="oldBox">
-                <h1>Project Fitness</h1>
+                <h1>MacroFit</h1>
                 <hr>
                 <form id="login">
                     <div class="row1 col" style="width: 50%; justify-self:center; margin:0;">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="row3 col1">
                         <label for="dob">Date Of Birth</label>
-                        <input type="date" id="dob" name="dob" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
+                        <input type="date" id="dob" name="dob" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" value=""
                             placeholder="MM/DD/YYYY" required>
                     </div>
                     <div class="row3 col2">
@@ -140,6 +140,7 @@
 
     {{!-- Website f(x) JS --}}
     <script src="js/caloric.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
