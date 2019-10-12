@@ -14,5 +14,13 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER
         }
     });
+
+    trainee_macro.associate = function (models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        trainee_macro.hasMany(models.trainee_meal_daily, {
+            onDelete: "cascade"
+        });
+    };
     return trainee_macro;
 };
