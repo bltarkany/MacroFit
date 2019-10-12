@@ -330,6 +330,14 @@ canvas {
   background: #5085a5;
 }
 
+#myBtn{
+  border: .1rem #8fc1e3 solid;
+}
+
+#myBtn:hover{
+  bor
+}
+
 .close {
   color: #aaa;
   float: right;
