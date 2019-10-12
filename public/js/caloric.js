@@ -246,6 +246,8 @@ $(document).ready(function () {
     }).then(function (data) {
       console.log("created new trainee");
       console.log(data);
+      console.log(data.id);
+      window.location.replace("/dashboard/" + data.id);
 
       // clear values from form
       $("#first").val("");
@@ -261,8 +263,8 @@ $(document).ready(function () {
       $("#deficit").val("");
     });
 
-    window.location.href = "/dashboard/";
-    return false;
+    // window.location.href = "/dashboard/";
+    // return false;
     // window.location.replace("/dashboard");
   });
 
