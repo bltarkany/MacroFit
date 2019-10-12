@@ -111,7 +111,7 @@ module.exports = function (app) {
           console.log(url);
           console.log(loginCreds);
           app.get(url, function (data) {
-            db.sequelize.findAll({})
+            db.sequelize.findAll({});
             console.log(data);
             console.log("hit here");
           });
