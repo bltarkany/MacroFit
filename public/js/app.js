@@ -1,6 +1,13 @@
+/* eslint-disable camelcase */
 /* eslint-disable indent */
 /* eslint-disable prettier/prettier */
 $(document).ready(function () {
+
+    var url = window.location.href;
+    var trainee_id = url.substring(url.lastIndexOf("/") + 1);
+    console.log(url.substring(url.lastIndexOf("/") + 1));
+    console.log(url.substring(url.lastIndexOf("/")));
+    console.log(trainee_id);
 
     // Today's Date
     today = new Date();
@@ -96,26 +103,25 @@ $(document).ready(function () {
     // };
 
     //--------------------------ADD MACRO POST METHOD--------------------------
-    $("#addMacro").on("click", function(){
+    $("#addMacro").on("click", function () {
         console.log("submit clicked");
         var cal = $("#cal").val().trim();
         var fat = $("#fat").val().trim();
         var prot = $("#prot").val().trim();
         var carb = $("#carb").val().trim();
         var newMacro = {
-            id: 2,
             calories: cal,
             protein: prot,
             carbs: carb,
             fats: fat
         };
 
-        var route = "/api/dashboard/mealSummary/2";
+        var route = "/api/dashboard/mealSummary/" + trainee_id;
 
-        $.ajax(route,{
-            type:"POST",
+        $.ajax(route, {
+            type: "POST",
             data: newMacro
-        }).then(function(data){
+        }).then(function (data) {
             console.log("macros added");
             console.log(data);
             clearMeal();
@@ -152,13 +158,13 @@ $(document).ready(function () {
             newWorkoutExample.append($("<br>"));
             $(".workoutDashContainer").append(newWorkoutExample);
             console.log("workout added");
-            
+
         }
     }
     ///////////// Workout Box /////////////  
 
     //------HARDCODE ACCOUNT-----//
-    $(".fake").click(function(){
+    $(".fake").click(function () {
         console.log("hardcode click");
         window.location.href = "/dashboard/2/cd0981c33b36f71";
         return false;
