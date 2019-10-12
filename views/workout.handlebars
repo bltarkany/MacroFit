@@ -1,9 +1,26 @@
-<div class="box posAll">
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../public/styles/workoutButton.css">
+  </head>
+<body>
+  <div class="box posAll">
   <div class="boxHeader">Workout Database</div>
-
   {{!-- SINGLE EXAMPLE --}}
+    <ul>
+    <button class="btn fullbody">Full Body</button>
+    <button class="btn upperbody">Upper Body</button>
+    <button class="btn lowerbody">Lower Body</button>
+    <button class="btn back">Back</button>
+    <button class="btn biceps">Biceps</button>
+    <button class="btn triceps">Triceps</button>
+    <button class="btn chest">Chest</button>
+    <button class="btn shoulders">Shoulders</button>
+    <button class="btn legs">Legs</button>
+    </ul>
   {{#each fb}}
   <div class="workoutContainer">
+
     <ul>
     <p style="text-transform: uppercase">
     {{name}}
@@ -34,3 +51,7 @@
   </div>
   {{/each}}
 </div>
+<script src="jquery-3.4.1.min.js"></script>
+<script src="../public/js/data.js"></script>
+</body>
+</html>

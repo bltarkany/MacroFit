@@ -107,49 +107,63 @@ var workouts = [
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/23/Male/m/23_2.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/23/Male/m/23_1.jpg",
       equipment: "barbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "dumbbell shoulder press",
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/m/328_1.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/328/Male/m/328_2.jpg",
       equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "single arm bent over row",
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/13/Male/m/13_2.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/13/Male/m/13_1.jpg",
       equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "lateral raises",
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/373/Male/m/373_1.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/373/Male/m/373_2.jpg",
       equipment: "dumbbell",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "tricep rope pulldowns",
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/54/Male/m/54_1.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/54/Male/m/54_2.jpg",
       equipment: "cable",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "push ups",
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/m/70_1.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/70/Male/m/70_2.jpg",
       equipment: "body only",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     },
     {
       name: "rope cable curls",
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/189/Male/m/189_1.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/189/Male/m/189_2.jpg",
       equipment: "cable",
-      type: "strength"
+      type: "strength",
+      set: 4,
+      rep: 12
     }
   ],
   // LOWER BODY------------------------------
@@ -158,14 +172,18 @@ var workouts = [
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/3861/Male/m/3861_1.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/3861/Male/m/3861_2.jpg",
       equipment: "barbell",
-      type: "strength"
+      type: "strength",
+      set: 10,
+      rep: 3
     },
     {
       name: "jump squat",
       start: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/108/Female/m/108_1.jpg",
       end: "https://www.bodybuilding.com/exercises/exerciseImages/sequences/108/Female/m/108_2.jpg",
       equipment: "body only",
-      type: "plyometrics"
+      type: "plyometrics",
+      set: 3,
+      rep: 5
     },
     {
       name: "dumbbell step ups",
