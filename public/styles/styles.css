@@ -30,7 +30,8 @@ p {
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
-  font-size: 130%;
+  font-size: 100%;
+  text-transform: capitalize;
 }
 
 html {
@@ -202,6 +203,7 @@ canvas {
 }
 
 /* WORKOUT box */
+
 .workoutOptions {
   z-index: 9;
   display: flex;
@@ -232,6 +234,15 @@ canvas {
   padding: 1rem;
 }
 
+.workoutPicSmall{
+  width: 100%;
+  height: auto;
+}
+
+.workoutExample{
+  width:10vw;
+}
+
 .verticalContainer {
   display: flex;
   flex-wrap: wrap;
@@ -240,8 +251,6 @@ canvas {
   justify-content: space-evenly;
   flex-direction: column;
 }
-
-/* ------------------INDEX PAGE END------------------*/
 
 /* ------------------WOKROUT PAGE START------------------*/
 
@@ -260,8 +269,8 @@ canvas {
 }
 
 .workoutPic {
-  width: 20vw;
-  height: 20vw;
+  width: 100%;
+  height: auto;
 }
 
 .workoutDesc {

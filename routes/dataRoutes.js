@@ -1,4 +1,4 @@
-var db = require("../db/exercise-database/data.js");
+var data = require("../public/js/data.js");
 var express = require("express");
 var exphbs = require("express-handlebars");
 
