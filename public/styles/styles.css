@@ -234,6 +234,15 @@ canvas {
   padding: 1rem;
 }
 
+.workoutContainer{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  width: 50%;
+  padding: 1rem;
+}
+
+
 .workoutPicSmall{
   width: 100%;
   height: auto;
@@ -328,6 +337,10 @@ canvas {
 #addMacro:hover {
   color: #8fc1e3;
   background: #5085a5;
+}
+
+#myBtn{
+  border: .1rem #8fc1e3 solid;
 }
 
 .close {

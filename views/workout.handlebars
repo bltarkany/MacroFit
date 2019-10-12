@@ -1,57 +1,50 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="../public/styles/workoutButton.css">
-  </head>
-<body>
   <div class="box posAll">
-  <div class="boxHeader">Workout Database</div>
-  {{!-- SINGLE EXAMPLE --}}
-    <ul>
-    <button class="btn fullbody">Full Body</button>
-    <button class="btn upperbody">Upper Body</button>
-    <button class="btn lowerbody">Lower Body</button>
-    <button class="btn back">Back</button>
-    <button class="btn biceps">Biceps</button>
-    <button class="btn triceps">Triceps</button>
-    <button class="btn chest">Chest</button>
-    <button class="btn shoulders">Shoulders</button>
-    <button class="btn legs">Legs</button>
-    </ul>
-  {{#each fb}}
-  <div class="workoutContainer">
-
-    <ul>
-    <p style="text-transform: uppercase">
-    {{name}}
-    </p>
-
-    <div class="workout">
-        <img class="workoutPic"style="order: 1" src="{{start}}" alt="squatEX1">
-      <img class="workoutPic" style="order: 2" src="{{end}}" alt="squatEX2">
-      <div class="workoutDesc">
-        <p>EQUIPMENT: {{equipment}}</p>
-        <hr>
-        <p>TYPE: {{type}}</p>
-      </div>
-
-      <div class="workoutSet">
-        <p>
-          SETS: {{set}}
-        </p>
-        <hr>
-        <p>
-          REPS: {{rep}}
-        </p>
-      </div>
-
+    <div class="boxHeader">Workout Database</div>
+    {{!-- SINGLE EXAMPLE --}}
+    <div class="workoutOptions">
+      <div class="option out" data-index="0">Full Body</div>
+      <div class="option out" data-index="1">Upper Body</div>
+      <div class="option out" data-index="2">Lower Body</div>
+      <div class="option out" data-index="3">Back</div>
+      <div class="option out" data-index="4">Biceps</div>
+      <div class="option out" data-index="5">Triceps</div>
+      <div class="option out" data-index="6">Chest</div>
+      <div class="option out" data-index="7">Shoulders</div>
+      <div class="option out" data-index="8">Legs</div>
     </div>
+    <div class="largeContainer">
+    {{#each fb}}
+    <div class="workoutContainer">
+      <ul>
+      <p style="text-transform: uppercase">
+          {{name}}
+        </p>
 
-    </ul>
+        <div class="workout">
+          <img class="workoutPic" style="order: 1" src="{{start}}" alt="squatEX1">
+          <img class="workoutPic" style="order: 2" src="{{end}}" alt="squatEX2">
+          <div class="workoutDesc">
+            <p>EQUIPMENT: {{equipment}}</p>
+            <hr>
+            <p>TYPE: {{type}}</p>
+          </div>
+
+          <div class="workoutSet">
+            <p>
+              SETS: {{set}}
+            </p>
+            <hr>
+            <p>
+              REPS: {{rep}}
+            </p>
+          </div>
+
+        </div>
+
+      </ul>
+      
+    </div>
+    
+    {{/each}}
+    </div>
   </div>
-  {{/each}}
-</div>
-<script src="jquery-3.4.1.min.js"></script>
-<script src="../public/js/data.js"></script>
-</body>
-</html>

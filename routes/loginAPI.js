@@ -105,6 +105,7 @@ module.exports = function (app) {
           // res.status(200).json(data[0])
           res.redirect("/dashboard");
           console.log("now hits this");
+
         } else {
           res.status(200).json(data[0]);
           alert("incorrect user/password");

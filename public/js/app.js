@@ -80,11 +80,11 @@ $(document).ready(function () {
     // Open/close modal
     btn.onclick = function () {
         modal.style.display = "block";
-    }
+    };
     span.onclick = function () {
         modal.style.display = "none";
         clearMeal();
-    }
+    };
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
@@ -93,9 +93,22 @@ $(document).ready(function () {
             modal.style.display = "none";
             clearMeal();
         }
-    }
+    };
 
-    function clearMeal(){
+    //--------------------------ADD MACRO POST METHOD--------------------------
+    $("#addMacro").on("click", function(){
+        $.ajax("ROUTE",{
+            type:"POST",
+            data: currentMacros
+        }).then(function(data){
+            console.log("macros added");
+            console.log(data);
+            clearMeal();
+        });
+    });
+    //--------------------------ADD MACRO POST METHOD--------------------------
+
+    function clearMeal() {
         $("#cal").val("");
         $("#fat").val("");
         $("#prot").val("");
@@ -124,11 +137,19 @@ $(document).ready(function () {
             newWorkoutExample.append($("<br>"));
             $(".workoutDashContainer").append(newWorkoutExample);
             console.log("workout added");
+            
         }
     }
-
     ///////////// Workout Box /////////////  
 
+
+    ///////////// Today's workout /////////////
+
+
+
+
+
+    ///////////////////////////////////////////
     ///////////// Achievement Box /////////////  
     createAchievement("Hit Macro Goal", "10/10/2019");
     createAchievement("Hit Calorie Goal", "10/10/2019");
