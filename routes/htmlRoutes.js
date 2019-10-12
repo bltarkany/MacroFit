@@ -30,32 +30,37 @@ module.exports = function (app) {
       .findOne({
         where: {
           id: req.params.id
-        }
-        ,include: [db.trainee_meal_daily]
+        },
+        include: [db.trainee_meal_daily]
       })
       .then(function (data) {
+        // ---------UNCOMMENT BELOW TO TEST------- //
         // res.json(data);
+        //----------------------------------------//
+
+        // ---------UNCOMMENT BELOW FOR LIVE------- //
         res.render("index", {
           macro: data
         });
+        //------------------------------------------//
       });
   });
 
   // Workout
   app.get("/workout", function (req, res) {
     db.trainee_macro
-    .findOne({
-      where: {
-        id: req.params.id
-      }
-      ,include: [db.trainee_meal_daily]
-    })
-    .then(function (data) {
-      // res.json(data);
-      res.render("workout", {
-        macro: data
+      .findOne({
+        where: {
+          id: req.params.id
+        },
+        include: [db.trainee_meal_daily]
+      })
+      .then(function (data) {
+        // res.json(data);
+        res.render("workout", {
+          macro: data
+        });
       });
-    });
   });
 
 
