@@ -33,7 +33,7 @@
     <canvas id="counter"></canvas>
     {{!-- cal info divs --}}
     <div id="current" data-current="800"></div>
-    <div id="max" data-max="2000"></div>
+    <div id="max" data-max="{{macro.calories}}"></div>
 
     {{!-- Calorie Info --}}
     <div class="ccLabel" style="margin-bottom: 2rem;">
@@ -53,10 +53,10 @@
       {{!-- FATS --}}
       <div class="ccLabel">
         Fats<br>
-        <span id="fatNow" data-fatnow="100">
+        <span id="fatNow" data-fatnow="5">
         </span>
         /
-        <span id="fatFinal" data-fatfinal="200">
+        <span id="fatFinal" data-fatfinal="{{macro.fats}}">
         </span> g
         <hr>
       </div>
@@ -64,10 +64,10 @@
       {{!-- PROTEIN --}}
       <div class="ccLabel">
         Protein<br>
-        <span id="proteinNow" data-proteinnow="200">
+        <span id="proteinNow" data-proteinnow="10">
         </span>
         /
-        <span id="proteinFinal" data-proteinfinal="300">
+        <span id="proteinFinal" data-proteinfinal="{{macro.proteins}}">
         </span> g
         <hr>
       </div>
@@ -75,10 +75,10 @@
       {{!-- CARB --}}
       <div class="ccLabel">
         Carbs<br>
-        <span id="carbNow" data-carbnow="300">
+        <span id="carbNow" data-carbnow="20">
         </span>
         /
-        <span id="carbFinal" data-carbfinal="400">
+        <span id="carbFinal" data-carbfinal="{{macro.carbs}}">
         </span> g
       </div>
 

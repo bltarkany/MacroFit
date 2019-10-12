@@ -2,6 +2,18 @@ var db = require("../models");
 
 //console.log(db);
 module.exports = function (app) {
+    // app.get("/dashboard/10/cd0981c33b36f71", function (req, res) {
+    //     db.trainee_macro
+    //         .findOne({
+    //             where: {
+    //                 id: 10
+    //             }
+    //         })
+    //         .then(function (data) {
+    //             res.json(data);
+    //         });
+    // });
+
     app.get("/api/dashboard/:id", function (req, res) {
         db.trainee_info
             .findOne({
