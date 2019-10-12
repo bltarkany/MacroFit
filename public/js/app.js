@@ -191,11 +191,11 @@ $(document).ready(function () {
 
     
     ///////////// Achievement Box /////////////  
-    createAchievement("Hit Macro Goal", "10/10/2019");
-    createAchievement("Hit Calorie Goal", "10/10/2019");
-    createAchievement("New PR &lt;Bench Press&gt;", "10/8/2019");
-    createAchievement("Finished Workout", "10/8/2019");
-    createAchievement("Created Account", "10/7/2019");
+    // createAchievement("Hit Macro Goal", "10/10/2019");
+    // createAchievement("Hit Calorie Goal", "10/10/2019");
+    // createAchievement("New PR &lt;Bench Press&gt;", "10/8/2019");
+    // createAchievement("Finished Workout", "10/8/2019");
+    createAchievement("Created Account", m + "/" + d + "/" + y);
 
     function createAchievement(name, date) {
         var newLabel = $("<div>");
