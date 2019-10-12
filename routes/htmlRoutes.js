@@ -35,13 +35,13 @@ module.exports = function (app) {
       })
       .then(function (data) {
         // ---------UNCOMMENT BELOW TO TEST------- //
-        // res.json(data);
+        res.json(data);
         //----------------------------------------//
 
         // ---------UNCOMMENT BELOW FOR LIVE------- //
-        res.render("index", {
-          macro: data
-        });
+        // res.render("index", {
+        //   macro: data
+        // });
         //------------------------------------------//
       });
   });
