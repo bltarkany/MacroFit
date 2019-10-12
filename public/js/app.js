@@ -28,8 +28,9 @@ $(document).ready(function () {
 
 
     // eslint-disable-next-line eqeqeq
-    if (current == max) {
+    if (current >= max) {
         $("#ccMotive").text("You've met your goal for today!");
+        createAchievement("Hit Calorie Goal", m + "/" + d + "/" + y);
     } else {
         $("#ccMotive").text("Keep Up Your Healthy Diet!");
     }
