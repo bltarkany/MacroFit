@@ -47,7 +47,7 @@ module.exports = function (app) {
   });
 
   // Workout
-  app.get("/workout", function (req, res) {
+  app.get("/workout/:id", function (req, res) {
     db.trainee_macro
       .findOne({
         where: {
