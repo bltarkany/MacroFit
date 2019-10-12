@@ -246,6 +246,8 @@ $(document).ready(function () {
     }).then(function (data) {
       console.log("created new trainee");
       console.log(data);
+      console.log(data.id);
+      window.location.replace("/dashboard/" + data.id);
 
       // clear values from form
       $("#first").val("");
@@ -261,9 +263,11 @@ $(document).ready(function () {
       $("#deficit").val("");
     });
 
+
     $("#oldBox").removeClass("hidden");
     $("#newBox").addClass("hidden");
     console.log("Box toggled");
+    
     // window.location.replace("/dashboard");
     return false;
   });
