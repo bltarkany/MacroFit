@@ -55,6 +55,7 @@ module.exports = function (app) {
                 console.log("Data inserted: " + JSON.stringify(data, null, 2));
                 console.log(data[0]);
                 res.status(200).json(data[0]);
+                location.reload();
             });
     });
 };
