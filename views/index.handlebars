@@ -32,7 +32,7 @@
     <div id="ccMotive" style="margin-top: 2rem;"></div>
     <canvas id="counter"></canvas>
     {{!-- cal info divs --}}
-    <div id="current" data-current="800"></div>
+    <div id="current" data-current="{{macro.trainee_meal_dailies.[0].Calories}}"></div>
     <div id="max" data-max="{{macro.calories}}"></div>
 
     {{!-- Calorie Info --}}
@@ -53,7 +53,7 @@
       {{!-- FATS --}}
       <div class="ccLabel">
         Fats<br>
-        <span id="fatNow" data-fatnow="5">
+        <span id="fatNow" data-fatnow="{{macro.trainee_meal_dailies.[0].Fats}}">
         </span>
         /
         <span id="fatFinal" data-fatfinal="{{macro.fats}}">
@@ -64,7 +64,7 @@
       {{!-- PROTEIN --}}
       <div class="ccLabel">
         Protein<br>
-        <span id="proteinNow" data-proteinnow="10">
+        <span id="proteinNow" data-proteinnow="{{macro.trainee_meal_dailies.[0].Protein}}">
         </span>
         /
         <span id="proteinFinal" data-proteinfinal="{{macro.proteins}}">
@@ -75,7 +75,7 @@
       {{!-- CARB --}}
       <div class="ccLabel">
         Carbs<br>
-        <span id="carbNow" data-carbnow="20">
+        <span id="carbNow" data-carbnow="{{macro.trainee_meal_dailies.[0].Carbs}}">
         </span>
         /
         <span id="carbFinal" data-carbfinal="{{macro.carbs}}">
