@@ -157,14 +157,13 @@ $(document).ready(function () {
     }
     ///////////// Workout Box /////////////  
 
+    //------HARDCODE ACCOUNT-----//
+    $(".fake").click(function(){
+        console.log("hardcode click");
+        window.location.href = "/dashboard/2/cd0981c33b36f71";
+        return false;
+    });
 
-    ///////////// Today's workout /////////////
-
-
-
-
-
-    ///////////////////////////////////////////
     ///////////// Achievement Box /////////////  
     createAchievement("Hit Macro Goal", "10/10/2019");
     createAchievement("Hit Calorie Goal", "10/10/2019");

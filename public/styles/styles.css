@@ -501,7 +501,6 @@ select {
 }
 
 input[type=submit] {
-  width: 100%;
   border: none;
   border-radius: .2rem;
   background-color: #f7f9fb;
