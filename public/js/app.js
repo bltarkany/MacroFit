@@ -80,11 +80,11 @@ $(document).ready(function () {
     // Open/close modal
     btn.onclick = function () {
         modal.style.display = "block";
-    }
+    };
     span.onclick = function () {
         modal.style.display = "none";
         clearMeal();
-    }
+    };
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
@@ -93,9 +93,9 @@ $(document).ready(function () {
             modal.style.display = "none";
             clearMeal();
         }
-    }
+    };
 
-    function clearMeal(){
+    function clearMeal() {
         $("#cal").val("");
         $("#fat").val("");
         $("#prot").val("");
