@@ -95,6 +95,19 @@ $(document).ready(function () {
         }
     };
 
+    //--------------------------ADD MACRO POST METHOD--------------------------
+    $("#addMacro").on("click", function(){
+        $.ajax("ROUTE",{
+            type:"POST",
+            data: currentMacros
+        }).then(function(data){
+            console.log("macros added");
+            console.log(data);
+            clearMeal();
+        });
+    });
+    //--------------------------ADD MACRO POST METHOD--------------------------
+
     function clearMeal() {
         $("#cal").val("");
         $("#fat").val("");
