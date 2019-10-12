@@ -289,6 +289,61 @@ canvas {
   text-align: center;
 }
 
+/* ADD MEAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #f7f9fb;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #8fc1e3;
+  width: 20%;
+}
+
+#addMeal{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#addMacro{
+  background: #8fc1e3;
+  border: .1rem solid;
+  padding: .5rem;
+  color: #f7f9fb;
+  cursor: pointer;
+}
+
+#addMacro:hover {
+  color: #8fc1e3;
+  background: #5085a5;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* ------------------INDEX PAGE END------------------*/
 
 /* ------------------FORM PAGE START------------------*/
@@ -456,5 +511,25 @@ select {
 @media only screen and (max-width: 1000px) {
   .modal {
     width: 100%;
+  }
+
+  .workoutDashContainer{
+    flex-direction: column;
+  }
+
+  .workoutExample{
+    width: 100%;
+  }
+
+  .mainGrid {
+    grid-template-columns: 8rem auto;
+  }
+  
+  .signIn{
+    width: 100%;
+  }
+
+  .modal-content{
+    width: 30%;
   }
 }

@@ -72,8 +72,40 @@ $(document).ready(function () {
     }
     ///////////// Calorie Counter /////////////
 
+    ///////////// Add Meal /////////////
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
 
-    console.log(workouts[0].length);
+    // Open/close modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+        clearMeal();
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        // eslint-disable-next-line eqeqeq
+        if (event.target == modal) {
+            modal.style.display = "none";
+            clearMeal();
+        }
+    }
+
+    function clearMeal(){
+        $("#cal").val("");
+        $("#fat").val("");
+        $("#prot").val("");
+        $("#carb").val("");
+    }
+
+
+    ///////////// Add Meal /////////////
+
+
     ///////////// Workout Box /////////////
     $(".wrk").click(function () {
         var index = $(this).attr("data-index");
@@ -86,7 +118,7 @@ $(document).ready(function () {
             var newWorkoutExample = $("<div>");
             newWorkoutExample.addClass("workoutExample");
             var newName = $("<p>").addClass("workoutDesc").text(workouts[index][i].name);
-            var newPic = $("<img>").addClass("workoutPicSmall").attr("src",workouts[index][i].start);
+            var newPic = $("<img>").addClass("workoutPicSmall").attr("src", workouts[index][i].start);
             newWorkoutExample.append(newName);
             newWorkoutExample.append(newPic);
             newWorkoutExample.append($("<br>"));
