@@ -188,7 +188,7 @@ canvas {
 
 .workoutPic {
   width: 20vw;
-  height: 20vw;
+  height: auto;
 }
 
 .workoutDesc {
