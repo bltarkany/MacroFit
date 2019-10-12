@@ -2,16 +2,20 @@
 module.exports = function (sequelize, DataTypes) {
     var trainee_macro = sequelize.define("trainee_macro", {
         calories: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: "0"
         },
         proteins: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: "0"
         },
         carbs: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: "0"
         },
         fats: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            defaultValue: "0"
         }
     });
 
