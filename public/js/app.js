@@ -124,11 +124,19 @@ $(document).ready(function () {
             newWorkoutExample.append($("<br>"));
             $(".workoutDashContainer").append(newWorkoutExample);
             console.log("workout added");
+            
         }
     }
-
     ///////////// Workout Box /////////////  
 
+
+    ///////////// Today's workout /////////////
+
+
+
+
+
+    ///////////////////////////////////////////
     ///////////// Achievement Box /////////////  
     createAchievement("Hit Macro Goal", "10/10/2019");
     createAchievement("Hit Calorie Goal", "10/10/2019");
