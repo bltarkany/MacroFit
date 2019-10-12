@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable camelcase */
 /* eslint-disable indent */
 /* eslint-disable prettier/prettier */
@@ -18,6 +19,9 @@ $(document).ready(function () {
 
     ///////////// Calorie Counter /////////////
     var current = $("#current").attr("data-current");
+    if(current == ""){
+        current = 0;
+    }
     var max = $("#max").attr("data-max");
     var canvas = document.getElementById("counter");
     var ctx = canvas.getContext("2d");
@@ -31,13 +35,28 @@ $(document).ready(function () {
     }
 
     // Nutrition breakdown write-up
-    $("#fatNow").text($("#fatNow").attr("data-fatnow"));
+    var fatText = $("#fatNow").attr("data-fatnow");
+    if(fatText == ""){
+        fatText = 0;
+    }
+
+    $("#fatNow").text(fatText);
     $("#fatFinal").text($("#fatFinal").attr("data-fatfinal"));
 
-    $("#proteinNow").text($("#proteinNow").attr("data-proteinnow"));
+    var protText = $("#proteinNow").attr("data-proteinnow");
+    if(protText == ""){
+        protText = 0;
+    }
+
+    $("#proteinNow").text(protText);
     $("#proteinFinal").text($("#proteinFinal").attr("data-proteinfinal"));
 
-    $("#carbNow").text($("#carbNow").attr("data-carbnow"));
+    var carbText = $("#carbNow").attr("data-carbnow");
+    if(carbText == ""){
+        carbText = 0;
+    }
+
+    $("#carbNow").text(carbText);
     $("#carbFinal").text($("#carbFinal").attr("data-carbfinal"));
 
     var posX = canvas.width / 2;
@@ -170,6 +189,7 @@ $(document).ready(function () {
         return false;
     });
 
+    
     ///////////// Achievement Box /////////////  
     createAchievement("Hit Macro Goal", "10/10/2019");
     createAchievement("Hit Calorie Goal", "10/10/2019");
