@@ -263,9 +263,13 @@ $(document).ready(function () {
       $("#deficit").val("");
     });
 
-    // window.location.href = "/dashboard/";
-    // return false;
+
+    $("#oldBox").removeClass("hidden");
+    $("#newBox").addClass("hidden");
+    console.log("Box toggled");
+    
     // window.location.replace("/dashboard");
+    return false;
   });
 
   

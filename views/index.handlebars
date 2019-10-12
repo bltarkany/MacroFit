@@ -1,14 +1,39 @@
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Meal Information</p>
+    <form id="addMeal">
+      {{!-- CAL --}}
+      <input type="number" name="cal" id="cal" min="0" max="9000" placeholder="Calories">
+      {{!-- FAT --}}
+      <input type="number" name="fat" id="fat" min="0" max="9000" placeholder="Fat (g)">
+      {{!-- PROTEIN --}}
+      <input type="number" name="prot" id="prot" min="0" max="9000" placeholder="Protein (g)">
+      {{!-- CARB --}}
+      <input type="number" name="carb" id="carb" min="0" max="9000" placeholder="Carb (g)">
+      {{!-- submit --}}
+      <input type="submit" value="Add Macros" id="addMacro">
+    </form>
+  </div>
+
+</div>
+
 <div class="box pos0">
   <div class="boxHeader">Calorie Count
   </div>
-
   <div id="calories" class="boxTop">
+    {{!-- ADD MEAL --}}
+    <div class="option" id="myBtn">Add Meal</div>
+
     {{!-- Calorie Counter --}}
     <div id="ccMotive" style="margin-top: 2rem;"></div>
     <canvas id="counter"></canvas>
     {{!-- cal info divs --}}
     <div id="current" data-current="800"></div>
-    <div id="max" data-max="2000"></div>
+    <div id="max" data-max="{{macro.calories}}"></div>
 
     {{!-- Calorie Info --}}
     <div class="ccLabel" style="margin-bottom: 2rem;">
@@ -24,13 +49,14 @@
     <h2 class="boxHeader">Nutritional Breakdown</h2>
     {{!-- Nutrition Breakdown --}}
     <div class="verticalContainer">
+
       {{!-- FATS --}}
       <div class="ccLabel">
         Fats<br>
-        <span id="fatNow" data-fatnow="100">
+        <span id="fatNow" data-fatnow="5">
         </span>
         /
-        <span id="fatFinal" data-fatfinal="200">
+        <span id="fatFinal" data-fatfinal="{{macro.fats}}">
         </span> g
         <hr>
       </div>
@@ -38,23 +64,24 @@
       {{!-- PROTEIN --}}
       <div class="ccLabel">
         Protein<br>
-        <span id="proteinNow" data-proteinnow="200">
+        <span id="proteinNow" data-proteinnow="10">
         </span>
         /
-        <span id="proteinFinal" data-proteinfinal="300">
+        <span id="proteinFinal" data-proteinfinal="{{macro.proteins}}">
         </span> g
         <hr>
       </div>
 
-      {{!-- CARBnod --}}
+      {{!-- CARB --}}
       <div class="ccLabel">
         Carbs<br>
-        <span id="carbNow" data-carbnow="300">
+        <span id="carbNow" data-carbnow="20">
         </span>
         /
-        <span id="carbFinal" data-carbfinal="400">
+        <span id="carbFinal" data-carbfinal="{{macro.carbs}}">
         </span> g
       </div>
+
     </div>
 
   </div>
@@ -62,43 +89,28 @@
 </div>
 
 <div class="box pos1">
-  <div class="boxHeader">Your Workout
+  <div class="boxHeader">Quick Workout
   </div>
 
   {{!-- Options of what to display --}}
   <div class="workoutOptions">
-    <div class="option" id="fb">Full Body</div>
-    <div class="option" id="ub">Upper Body</div>
-    <div class="option" id="lb">Lower Body</div>
-    <div class="option" id="foc">Focused</div>
+    <div class="option wrk" id="fb" data-index="0">Full Body</div>
+    <div class="option wrk" id="ub" data-index="1">Upper Body</div>
+    <div class="option wrk" id="lb" data-index="2">Lower Body</div>
+    <div class="option wrk" id="back" data-index="3">Back</div>
+    <div class="option wrk" id="bi" data-index="4">Biceps</div>
+    <div class="option wrk" id="tro" data-index="5">Triceps</div>
+    <div class="option wrk" id="chest" data-index="6">Chest</div>
+    <div class="option wrk" id="shd" data-index="7">Shoulders</div>
+    <div class="option wrk" id="legs" data-index="8">Legs</div>
   </div>
 
   <div class="routine"></div>
 
   {{!-- Dynamic Exercise --}}
   <div class="workoutDashContainer">
-    <div class="workoutExample">
-      <p>Exercise</p>
-      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg">
-    </div>
-
-    <div class="workoutExample">
-      <p>Exercise</p>
-      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg">
-    </div>
-
-    <div class="workoutExample">
-      <p>Exercise</p>
-      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg">
-    </div>
-
-    <div class="workoutExample">
-      <p>Exercise</p>
-      <img class="workoutPic" src="https://www.bodybuilding.com/fun/2002/squat2.jpg">
-    </div>
+    <p>Choose a Workout</p>
   </div>
-
-
 
 </div>
 
@@ -108,15 +120,6 @@
 
   {{!-- Achievements --}}
   <div class="verticalContainer" id="achContainer">
-    <div class="ccLabel"><span>&#10003;</span> Hit Macros <span class="ccLabel2">10/10/2019</span>
-      <hr>
-    </div>
-    <div class="ccLabel"><span>&#10003;</span> Hit Calories <span class="ccLabel2">10/9/2019</span>
-      <hr>
-    </div>
-    <div class="ccLabel"><span>&#10003;</span> New PR &lt;Bench Press&gt; <span class="ccLabel2">10/9/2019</span>
-      <hr>
-    </div>
   </div>
 
 </div>

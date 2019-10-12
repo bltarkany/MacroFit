@@ -1,75 +1,72 @@
 var db = require("../models");
-module.exports = function(app) {
+module.exports = function (app) {
   // Intro Form
-  app.get("/", function(req, res) {
-    res.render("form", { layout: false });
-  });
-
-  // Load dashboard page
-  app.get("/dashboard", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+  app.get("/", function (req, res) {
+    res.render("form", {
+      layout: false
     });
   });
 
-  // Calendar
-  app.get("/Calendar", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("calendar", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
+  // Load dashboard page HARDCODE
+  // app.get("/dashboard/2", function (req, res) {
+  //   db.trainee_macro
+  //     .findOne({
+  //       where: {
+  //         id: 2
+  //       }
+  //       ,include: [db.trainee_meal_daily]
+  //     })
+  //     .then(function (data) {
+  //       // res.json(data);
+  //       res.render("index", {
+  //         macro: data
+  //       });
+  //     });
+  // });
 
-  // Profile
-  app.get("/profile", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("profile", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
+  // Dashaboard regular
+  app.get("/dashboard/:id", function (req, res) {
+    db.trainee_macro
+      .findOne({
+        where: {
+          id: req.params.id
+        },
+        include: [db.trainee_meal_daily]
+      })
+      .then(function (data) {
+        // ---------UNCOMMENT BELOW TO TEST------- //
+        // res.json(data);
+        //----------------------------------------//
 
-  // Nutrition
-  app.get("/nutrition", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("nutrition", {
-        msg: "Welcome!",
-        examples: dbExamples
+        // ---------UNCOMMENT BELOW FOR LIVE------- //
+        res.render("index", {
+          macro: data
+        });
+        //------------------------------------------//
       });
-    });
   });
 
   // Workout
-  app.get("/workout", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("workout", {
-        msg: "Welcome!",
-        examples: dbExamples
+  app.get("/workout", function (req, res) {
+    db.trainee_macro
+      .findOne({
+        where: {
+          id: req.params.id
+        },
+        include: [db.trainee_meal_daily]
+      })
+      .then(function (data) {
+        // res.json(data);
+        res.render("workout", {
+          macro: data
+        });
       });
-    });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
+
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };

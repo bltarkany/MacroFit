@@ -27,7 +27,7 @@
     <div class="sideNav">
 
       {{!-- Nav Title --}}
-      <div class="navTitle">Macro Fit</div>
+      <a href="/dashboard/2"><div class="navTitle">Macro Fit</div></a>
 
       {{!-- navLink --}}
       <div class="navLinks">
@@ -36,13 +36,13 @@
         <div class="nav" id="calendar"><span id="date">Now</span></div>
 
         {{!-- My Account --}}
-        <div class="nav" id="account">General Profile</div>
-
-        {{!-- Nutrition --}}
-        <div class="nav" id="nutrition">Nutrition Profile</div>
+        <a href="/dashboard/{{macro.id}}"><div class="nav" id="account">My Dashboard</div></a>
 
         {{!-- Workout --}}
-        <div class="nav" id="workout">Workouts</div>
+        <a href="/workout"><div class="nav" id="workout">Workouts</div></a>
+
+        {{!-- Logout --}}
+        <a href="/"><div class="nav" id="logout">Log Out</div></a>
 
       </div>
     </div>
@@ -55,7 +55,9 @@
   </div>
 
   {{!-- Website f(x) JS --}}
-  <script src="js/app.js"></script>
+  <script src="/js/data.js" type="text/javascript"></script>
+  <script src="/js/app.js" type="text/javascript"></script>
+  <script src="/js/workouts.js"></script>
 </body>
 
 </html>
