@@ -2,12 +2,12 @@ $(document).ready(function () {
     console.log("login loaded");
 
     //------HARDCODE ACCOUNT-----//
-    $(".fake").click(function(){
-        console.log("hardcode click");
-        window.location.href = "/dashboard/2/cd0981c33b36f71";
-        return false;
-    });
-    
+    // $(".fake").click(function(){
+    //     console.log("hardcode click");
+    //     window.location.href = "/dashboard/2/cd0981c33b36f71";
+    //     return false;
+    // });
+
     // login in to existing account listener
     $("#sub-btn-login").on("click", function () {
         //window.history.replaceState({}, document.title, "/" + "api/traineeSignUp/validate");
