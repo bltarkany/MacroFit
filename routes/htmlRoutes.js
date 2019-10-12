@@ -8,13 +8,30 @@ module.exports = function (app) {
   });
 
   // Load dashboard page HARDCODE
-  app.get("/dashboard/2/cd0981c33b36f71", function (req, res) {
+  // app.get("/dashboard/2", function (req, res) {
+  //   db.trainee_macro
+  //     .findOne({
+  //       where: {
+  //         id: 2
+  //       }
+  //       ,include: [db.trainee_meal_daily]
+  //     })
+  //     .then(function (data) {
+  //       // res.json(data);
+  //       res.render("index", {
+  //         macro: data
+  //       });
+  //     });
+  // });
+
+  // Dashaboard regular
+  app.get("/dashboard/:id", function (req, res) {
     db.trainee_macro
       .findOne({
         where: {
-          id: 2
+          id: req.params.id
         }
-        // ,include: db.trainee_meal_daily
+        ,include: [db.trainee_meal_daily]
       })
       .then(function (data) {
         // res.json(data);
@@ -24,17 +41,19 @@ module.exports = function (app) {
       });
   });
 
-  // Example Page
-  app.get("/dashboard", function (req, res) {
-    res.render("index");
-  });
-
   // Workout
   app.get("/workout", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+    db.trainee_macro
+    .findOne({
+      where: {
+        id: req.params.id
+      }
+      ,include: [db.trainee_meal_daily]
+    })
+    .then(function (data) {
+      // res.json(data);
       res.render("workout", {
-        msg: "Welcome!",
-        examples: dbExamples
+        macro: data
       });
     });
   });
