@@ -8,6 +8,13 @@ The excuses for ignoring our health are boundless. The two most common to be enc
 With this app we are looking to solve just that. With the ability to put the power of a trainer 
 within the palm of your hand. 
 
+Please Demo the app here:
+
+[Demo Link](https://bt-project-2.herokuapp.com/)
+
+
+Once inside the app please login as a new client. Create a profile and begin filling in macro intake to 
+view functionality of the app. Try out the workout section and enjoy. 
 
 ## Overview
 
